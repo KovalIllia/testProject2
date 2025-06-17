@@ -25,5 +25,6 @@ class TestStoreApi():
         except ValueError:
             raise RuntimeError("JSON is not valid JSON")
         order_result = post_data["complete"]
+        order_id=post_data["id"]
         assert order_result == True
         print(json.dumps(post_data, indent=2))

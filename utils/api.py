@@ -15,8 +15,9 @@ class Store():
         result_get = requests.get(get_url)
         return result_get
 
-    """Place an order for a pet"""
 
+
+    """Place an order for a pet"""
     @staticmethod
     def place_order():
         post_resource = "/store/order"
@@ -31,3 +32,7 @@ class Store():
         post_url = f"{base_url}{post_resource}"
         result_post=requests.post(post_url,json=json_for_creat_order)
         return result_post
+
+    """Find purchase order by ID"""
+    @staticmethod
+    def get_info_about_placed_order(order_id):
