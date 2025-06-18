@@ -58,8 +58,3 @@ class TestStoreApi():
         print("DELETE /store/order/{orderId}")
         result_delete_posted_order:requests.Response=Store.delete_placed_order(post_order)
         assert result_delete_posted_order.status_code==200,"Problem with status_code DELETE_order request"
-        # try:
-        #     get_data = result_delete_posted_order.json()
-        # except ValueError:
-        #     raise RuntimeError("JSON is not valid JSON")
-        # print(json.dumps(get_data, indent=2))
