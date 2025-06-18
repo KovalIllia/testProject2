@@ -36,3 +36,17 @@ class Store():
     """Find purchase order by ID"""
     @staticmethod
     def get_info_about_placed_order(order_id):
+        get_resource="/store/order/"
+        get_url=f"{base_url}{get_resource}{order_id}"
+        result_get=requests.get(get_url)
+        return result_get
+
+
+    """Delete purchase order by ID"""
+    @staticmethod
+    def delete_placed_order(order_id):
+        delete_resource="/store/order/"
+        delete_url=f"{base_url}{delete_resource}{order_id}"
+        result_delete=requests.delete(delete_url)
+        print(result_delete.text)
+        return result_delete
