@@ -103,6 +103,7 @@ class TestStoreApi():
                                    ['id', 'petId', 'quantity', 'shipDate', 'status', 'complete'])
         print()
         print()
+        print()
 
         print("DELETE /store/order/{orderId}")
         result_delete_posted_order=Store.delete_placed_order(order_id)
