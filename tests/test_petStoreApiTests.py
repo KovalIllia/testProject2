@@ -6,7 +6,7 @@ import requests
 from utils.api import Store
 from utils.checking_methods import Checking
 
-# import allure
+import allure
 
 """Test store api"""
 
@@ -31,7 +31,7 @@ class TestStoreApi():
 
         """Place an order for a pet"""
         print("POST /store/order")
-        result_post = Store.place_order()
+        result_post = Store.place_first_order()
         post_data = result_post.json()
         order_result = post_data["complete"]
         order_id = post_data["id"]
@@ -72,7 +72,7 @@ class TestStoreApi():
 
         """Place an order for a pet"""
         print("POST /store/order")
-        result_post = Store.place_order()
+        result_post = Store.place_second_order()
         Checking.check_status_code(result_post, 200)
         post_data = result_post.json()
         order_result = post_data["complete"]

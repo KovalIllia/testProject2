@@ -11,7 +11,7 @@ from utils.api import Store
 @pytest.fixture(scope="function")
 def post_order():
     print("POST /store/order")
-    result_post = Store.place_order()
+    result_post = Store.place_FirstOrder()
     # assert result_post.status_code == 200, f"Wrong status code"
     post_data = result_post.json()
     order_result = post_data["complete"]

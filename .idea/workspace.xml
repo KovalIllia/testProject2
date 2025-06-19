@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="new version. 2 test = 2 scenarios" />
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="new version. 2 test = 2 scenarios check">
+      <change afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive_old/test_petStoreApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive_old/test_petStoreApi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750344029212</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="new version. 2 test = 2 scenarios check">
+      <option name="closed" value="true" />
+      <created>1750344501667</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1750344501667</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -157,6 +172,7 @@
     <MESSAGE value="p3+something new" />
     <MESSAGE value="p4 (Store: get,post,get,delete)" />
     <MESSAGE value="new version. 2 test = 2 scenarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="new version. 2 test = 2 scenarios" />
+    <MESSAGE value="new version. 2 test = 2 scenarios check" />
+    <option name="LAST_COMMIT_MESSAGE" value="new version. 2 test = 2 scenarios check" />
   </component>
 </project>
