@@ -39,6 +39,7 @@ class Store():
         get_resource="/store/order/"
         get_url=f"{base_url}{get_resource}{order_id}"
         result_get=requests.get(get_url)
+        print(result_get.text)
         return result_get
 
 
