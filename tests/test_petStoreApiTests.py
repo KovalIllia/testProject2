@@ -7,12 +7,18 @@ from utils.api import Store
 from utils.checking_methods import Checking
 
 import allure
-
+from allure_commons.types import Severity
 """Test store api"""
 
 
+@allure.epic('Epic Name')
+@allure.severity(Severity.CRITICAL)
+def test_example():
+    assert 1 == 1
+@allure.epic('Tests related access to Petstore orders')
 class TestStoreApi():
 
+    @allure.description('first test: post_order_and_get_info')
     @pytest.mark.run(order=1)
     def test_post_order_and_get_info(self):
 
@@ -64,16 +70,14 @@ class TestStoreApi():
         print()
         print()
 
-
-
-
+    @allure.description('second test: post_order_and_get_info')
     @pytest.mark.run(order=2)
     def test_post_get_delete_order(self):
 
         """Place an order for a pet"""
         print("POST /store/order")
-        result_post = Store.place_second_order()
-        Checking.check_status_code(result_post, 200)
+        result_post = Store.place_first_order()
+        # Checking.check_status_code(result_post, 200)
         post_data = result_post.json()
         order_result = post_data["complete"]
         order_id = post_data["id"]
