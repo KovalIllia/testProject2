@@ -33,4 +33,5 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 CMD ["python", "-m", "pytest", "-s", "--alluredir=/app/test_result/", "/testproject2/tests/"]
 
-#correct comand for starting test -- docker run -v "$(pwd):/testproject2" -v "$(pwd)/test_result:/app/test_result" -v "$(pwd)/logs:/app/logs" testproject2:latest
+#correct comand for starting test -- docker run -v "$(pwd):/testproject2" -v "$(pwd)/test_result:/app/test_result" -v "$(pwd)/logs:/app/logs" testproject2:latestTest change
+Test change
