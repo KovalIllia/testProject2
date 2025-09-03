@@ -35,3 +35,4 @@ CMD ["python", "-m", "pytest", "-s", "--alluredir=/app/test_result/", "/testproj
 
 #correct comand for starting test -- docker run -v "$(pwd):/testproject2" -v "$(pwd)/test_result:/app/test_result" -v "$(pwd)/logs:/app/logs" testproject2:latestTest change
 
+Test change
