@@ -28,8 +28,8 @@ class Checking():
 
     """method for checking for required fields VALUES in a query response"""
     @staticmethod
-    def check_json_value(responce: requests.Response, field_name, expected_value):
-        check=responce.json()
+    def check_json_value(response: requests.Response, field_name, expected_value):
+        check=response.json()
         check_info=check[field_name]
         assert check_info==expected_value
         print(f"{field_name} --- is correct")

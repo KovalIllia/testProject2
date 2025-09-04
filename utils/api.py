@@ -26,9 +26,9 @@ class ApiClient:
 
     def post_store_order(self, resource: str, body: dict):
         url = self.build_url(resource)
-        self.logger.add_request(url, method="POST", body=body)
+        self.logger.add_request(url, method="POST",body=body)
         response = requests.post(url, json=body)
-        self.logger.add_response(response,json=body)
+        self.logger.add_response(response,body=body)
         return response
 
     def delete_order(self,resource:str)->str:
