@@ -17,11 +17,11 @@ class ApiClient:
         return f"{self.base_url}{resource}"
 
 
-    def get_info_about_store(self,resource:str)-> str:
+    def get_info_about_store(self,resource:str,params:dict=None)-> requests.Response:
         url=self.build_url(resource)
-        self.logger.add_request(url,method="GET")
+        self.logger.add_request(url,method="GET",body=params)
         response=requests.get(url)
-        self.logger.add_response(response)
+        self.logger.add_response(response,body=params)
         return response
 
     def post_store_order(self, resource: str, body: dict):

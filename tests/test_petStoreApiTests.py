@@ -15,56 +15,38 @@ logger=Logger()
 client=ApiClient(logger)
 store_api=StoreApi(client)
 
-def test_create_first_order():
-    create_first_order=store_api.place_order()
-    print(create_first_order.status_code,create_first_order.json())
-    Checking.check_status_code(response=create_first_order,status_code=200)
-    Checking.check_json_value(response= create_first_order,field_name="status", expected_value="placed")
-    Checking.check_json_answer(response=create_first_order,expected_value=["id", "petId", "quantity", "shipDate", "status", "complete"])
+@pytest.fixture(scope="session")
+def place_order_for_a_pet():
+    response=store_api.place_order()
+    return response
 
+def test_get_inventories_by_status():
+    get_inventories=store_api.get_inventory()
+    print(get_inventories.status_code,get_inventories.json())
+    Checking.check_status_code(response=get_inventories,status_code=200)
 
-# @allure.epic('Epic Name')
-# @allure.severity(Severity.CRITICAL)
-# def test_example():
-#     assert 1 == 1
 # @allure.epic('Tests related access to Petstore orders')
-# class TestStoreApi():
-#
-#     @allure.description('first test: post_order_and_get_info')
-#     @pytest.mark.run(order=1)
-#     def test_post_order_and_get_info(self):
-#
-#         """Returns pet inventories by status"""
-#         print("GET /store/inventory")
-#         result_get = Store.get_info_about_store()
-#         Checking.check_status_code(result_get,200)
-#         get_data = result_get.json()
-#         print(json.dumps(get_data, indent=2))
-#         get_data=json.loads(result_get.text)
-#         print(list(get_data))
-#         # Checking.check_json_answer(result_get,['sold', 'new', 'placed', 'string', 'alive', 'pending', 'available', 'inprogress', 'peric'])
-#         print()
-#         print()
-#
-#
-#         """Place an order for a pet"""
-#         print("POST /store/order")
-#         result_post = Store.place_first_order()
-#         post_data = result_post.json()
-#         order_result = post_data["complete"]
-#         order_id = post_data["id"]
-#         assert order_result == True
-#         Checking.check_status_code(result_post, 200)
-#         print(json.dumps(post_data, indent=2))
-#         # get_posted_data=json.loads(result_post.text)
-#         # print(list(get_posted_data))
-#         Checking.check_json_answer(result_post,['id', 'petId', 'quantity', 'shipDate', 'status', 'complete'])
-#         Checking.check_json_value(result_post,"status","placed")
-#         print()
-#         print()
-#
-#
-#
+# @allure.severity(Severity.CRITICAL)
+def test_create_first_order(place_order_for_a_pet):
+    print(place_order_for_a_pet.status_code,place_order_for_a_pet.json())
+    Checking.check_status_code(response=place_order_for_a_pet,status_code=200)
+    Checking.check_json_value(response= place_order_for_a_pet,field_name="status", expected_value="placed")
+    Checking.check_json_answer(response=place_order_for_a_pet,expected_value=["id", "petId", "quantity", "shipDate", "status", "complete"])
+
+
+
+
+
+def test_find_purchase_order_by_id(place_order_for_a_pet):
+    order_id=place_order_for_a_pet.json()["id"]
+    find_purchase_order_by_id=store_api.get_info_about_placed_order_by_id(order_id)
+    print(find_purchase_order_by_id.status_code,find_purchase_order_by_id.json())
+    Checking.check_status_code(response=find_purchase_order_by_id, status_code=200)
+    Checking.check_json_value(response=find_purchase_order_by_id, field_name="status", expected_value="placed")
+    Checking.check_json_answer(response=find_purchase_order_by_id,expected_value=["id", "petId", "quantity", "shipDate", "status", "complete"])
+
+
+
 #         """"Find purchase order by ID"""
 #         print("GET /store/order/{orderId}")
 #         result_get_posted_order=Store.get_info_about_placed_order(order_id)#alternative another method
