@@ -31,10 +31,11 @@ class ApiClient:
         self.logger.add_response(response,body=body)
         return response
 
-    def delete_order(self,resource:str)->str:
+    def delete_order(self,resource:str, params:dict=None)->requests.Response:
         url=self.build_url(resource)
-        self.logger.add_request(url,method="DELETE")
+        self.logger.add_request(url,method="DELETE",body=params)
         response=requests.delete(url)
+        self.logger.add_response(response,body=params)
         return response
 
 class StoreApi:

@@ -33,7 +33,10 @@ class Logger():
 
 
     @classmethod
-    def add_response(cls,response,body=None):
+    def add_response(cls,response,body=None,endpoint_name:str=None):
+        data_to_add=""
+        if endpoint_name:
+            data_to_add+=f"Endpoint: {endpoint_name}\n"
         data_to_add = f"Response status: {response.status_code}\n"
         data_to_add += f"Response body: {response.text}\n"
 

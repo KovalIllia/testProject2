@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added 1-st valid test: test_create_first_order">
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/checking_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/checking_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757015232471</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture">
+      <option name="closed" value="true" />
+      <created>1757088969787</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1757088969787</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -259,6 +269,7 @@
     <MESSAGE value="new version. 2 test = 2 scenarios check" />
     <MESSAGE value="added loggging, but have a problem with error (probably with order_id)" />
     <MESSAGE value="added 1-st valid test: test_create_first_order" />
-    <option name="LAST_COMMIT_MESSAGE" value="added 1-st valid test: test_create_first_order" />
+    <MESSAGE value="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture" />
+    <option name="LAST_COMMIT_MESSAGE" value="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture" />
   </component>
 </project>
