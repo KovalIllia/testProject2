@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture">
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added finished testing for the STORE section, need to understand that petstore is not stable">
+      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/base_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/pet_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/store_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_petStoreApiTests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_pet_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_store_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/factories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/factories/order_factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/factories/pet_factory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive_old/test_petStoreApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive_old/test_petStoreApi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/checking_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/checking_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +75,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.pytest">
@@ -84,7 +94,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_petStoreApiTests.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_petStoreApiTests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -119,7 +129,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_petStoreApiTests.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_petStoreApiTests.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -255,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757088969787</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added finished testing for the STORE section, need to understand that petstore is not stable">
+      <option name="closed" value="true" />
+      <created>1757104124357</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1757104124357</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -270,6 +288,7 @@
     <MESSAGE value="added loggging, but have a problem with error (probably with order_id)" />
     <MESSAGE value="added 1-st valid test: test_create_first_order" />
     <MESSAGE value="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture" />
-    <option name="LAST_COMMIT_MESSAGE" value="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture" />
+    <MESSAGE value="added finished testing for the STORE section, need to understand that petstore is not stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="added finished testing for the STORE section, need to understand that petstore is not stable" />
   </component>
 </project>

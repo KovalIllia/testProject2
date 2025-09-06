@@ -28,7 +28,7 @@ class TestStoreApi():
 
     def test_get_info(self):
         print("GET /store/inventory")
-        result_get = Store.get_info_about_store()
+        result_get = Store.get()
         assert result_get.status_code==200
         get_data = result_get.json()
         print(json.dumps(get_data, indent=2))
