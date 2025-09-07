@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added finished testing for the STORE section, need to understand that petstore is not stable">
-      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/base_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/pet_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/store_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_petStoreApiTests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_pet_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_store_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/factories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/factories/order_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/factories/pet_factory.py" afterDir="false" />
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added new structure(global refactor),new chapter PetApi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive_old/test_petStoreApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive_old/test_petStoreApi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_pet_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_store_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_store_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/factories/pet_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/factories/pet_factory.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +52,8 @@
     &quot;Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_petStoreApi.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_petStoreApiTests.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_pet_api.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_store_api.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.test_petStoreApiTests.executor&quot;: &quot;Run&quot;,
@@ -80,7 +72,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest">
+  <component name="RunManager" selected="Python tests.Python tests in test_pet_api.py">
     <configuration name="test_petStoreApiTests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
@@ -118,6 +110,36 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in test_pet_api.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="testProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_pet_api.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_store_api.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="testProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_store_api.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest" type="tests" factoryName="Autodetect" temporary="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
@@ -136,10 +158,14 @@
     <list>
       <item itemvalue="Python.test_petStoreApiTests" />
       <item itemvalue="Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info" />
+      <item itemvalue="Python tests.Python tests in test_pet_api.py" />
+      <item itemvalue="Python tests.Python tests in test_store_api.py" />
       <item itemvalue="Python tests.pytest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in test_pet_api.py" />
+        <item itemvalue="Python tests.Python tests in test_store_api.py" />
         <item itemvalue="Python tests.pytest" />
         <item itemvalue="Python.test_petStoreApiTests" />
         <item itemvalue="Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info" />
@@ -273,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757104124357</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added new structure(global refactor),new chapter PetApi">
+      <option name="closed" value="true" />
+      <created>1757190528972</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1757190528972</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -289,6 +323,7 @@
     <MESSAGE value="added 1-st valid test: test_create_first_order" />
     <MESSAGE value="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture" />
     <MESSAGE value="added finished testing for the STORE section, need to understand that petstore is not stable" />
-    <option name="LAST_COMMIT_MESSAGE" value="added finished testing for the STORE section, need to understand that petstore is not stable" />
+    <MESSAGE value="added new structure(global refactor),new chapter PetApi" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new structure(global refactor),new chapter PetApi" />
   </component>
 </project>

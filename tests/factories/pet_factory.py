@@ -4,7 +4,7 @@ from faker import Faker
 fake=Faker()
 class PetFactory:
     @staticmethod
-    def default_pet(status="available") -> dict:
+    def default_pet(name=fake.first_name(),status="available") -> dict:
         return {
             "id": random.randint(1,1000),
             "category": {
