@@ -34,3 +34,10 @@ class ApiClient:
         response = requests.delete(url)
         self.logger.add_response(response, body=params)
         return response
+
+    def put(self,resource: str,body:dict)->requests.Response:
+        url=self.build_url(resource)
+        self.logger.add_request(url,method="PUT",body=body)
+        response=requests.put(url,json=body)
+        self.logger.add_response(response,body=body)
+        return response

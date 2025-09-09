@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added new structure(global refactor),new chapter PetApi">
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added fixes to test_pet_api.py, test_store_api.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/base_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/base_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/pet_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_pet_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_store_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_store_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/factories/pet_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/factories/pet_factory.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,9 +156,9 @@
     </configuration>
     <list>
       <item itemvalue="Python.test_petStoreApiTests" />
-      <item itemvalue="Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info" />
       <item itemvalue="Python tests.Python tests in test_pet_api.py" />
       <item itemvalue="Python tests.Python tests in test_store_api.py" />
+      <item itemvalue="Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info" />
       <item itemvalue="Python tests.pytest" />
     </list>
     <recent_temporary>
@@ -307,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757190528972</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added fixes to test_pet_api.py, test_store_api.py">
+      <option name="closed" value="true" />
+      <created>1757272556258</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1757272556258</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -324,6 +331,7 @@
     <MESSAGE value="added 3 valid test: test_get_inventories_by_status, test_create_first_order, test_find_purchase_order_by_id&#10;and fixture" />
     <MESSAGE value="added finished testing for the STORE section, need to understand that petstore is not stable" />
     <MESSAGE value="added new structure(global refactor),new chapter PetApi" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new structure(global refactor),new chapter PetApi" />
+    <MESSAGE value="added fixes to test_pet_api.py, test_store_api.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added fixes to test_pet_api.py, test_store_api.py" />
   </component>
 </project>
