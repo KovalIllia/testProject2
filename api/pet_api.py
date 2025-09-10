@@ -16,6 +16,14 @@ class PetApi:
         with allure.step("PUT /pet"):
             return self.client.put("/pet",body=pet_body)
 
-    def find_pet_by_status(self,status="available"):
+    def find_pet_by_status(self,status="available"):#pending/sold
         with allure.step("GET /pet/findByStatus"):
             return self.client.get(f"/pet/findByStatus?status={status}")
+
+    def find_pet_by_id(self, pet_id: int):
+        with allure.step("GET /pet/{petId}"):
+            return self.client.get(f"/store/order/{pet_id}")
+
+    def update_pet_with_form_data(self,pet_id: int,pet_body:dict):
+        with allure.step("POST  /pet/{petId}"):
+            return self.client.post_form(f"/pet/{pet_id}", body=pet_body)

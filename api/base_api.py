@@ -41,3 +41,10 @@ class ApiClient:
         response=requests.put(url,json=body)
         self.logger.add_response(response,body=body)
         return response
+
+    def post_form(self, resource: str, body:dict)->requests.Response:
+        url=self.build_url(resource)
+        self.logger.add_request(url, method="POST", body=body)
+        response = requests.post(url, data=body)
+        self.logger.add_response(response, body=body)
+        return response

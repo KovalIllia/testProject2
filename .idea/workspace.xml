@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added fixes to test_pet_api.py, test_store_api.py">
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added test_update_pet, test_find_pet_by_status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/base_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/base_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/pet_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_pet_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/factories/pet_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/factories/pet_factory.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757272556258</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added test_update_pet, test_find_pet_by_status">
+      <option name="closed" value="true" />
+      <created>1757404404190</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1757404404190</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -332,6 +341,7 @@
     <MESSAGE value="added finished testing for the STORE section, need to understand that petstore is not stable" />
     <MESSAGE value="added new structure(global refactor),new chapter PetApi" />
     <MESSAGE value="added fixes to test_pet_api.py, test_store_api.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fixes to test_pet_api.py, test_store_api.py" />
+    <MESSAGE value="added test_update_pet, test_find_pet_by_status" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test_update_pet, test_find_pet_by_status" />
   </component>
 </project>
