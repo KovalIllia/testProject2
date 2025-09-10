@@ -44,3 +44,9 @@ class Checking():
             print(f"search word {field_name} == is correct")
         else:
             print("operation failed")
+
+
+    @staticmethod
+    def check_message_contains(response:requests.Response,expected_substring:str):
+        check=response.json()
+        assert expected_substring in check["message"]

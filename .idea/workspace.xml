@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added test_update_pet, test_find_pet_by_status">
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added test_delete_pet">
+      <change afterPath="$PROJECT_DIR$/api/files_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/factories/file_factory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/base_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/base_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/pet_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_pet_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/factories/pet_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/factories/pet_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/checking_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/checking_methods.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,25 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_petStoreApi.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_petStoreApiTests.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_pet_api.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_store_api.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_petStoreApiTests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;iteration-03-without-docker&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/koval_i/PycharmProjects/testProject2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info.executor": "Run",
+    "Python tests.Python tests for test_pet_api.test_upload_pet_image.executor": "Run",
+    "Python tests.Python tests in test_petStoreApi.py.executor": "Run",
+    "Python tests.Python tests in test_petStoreApiTests.py.executor": "Run",
+    "Python tests.Python tests in test_pet_api.py.executor": "Run",
+    "Python tests.Python tests in test_store_api.py.executor": "Run",
+    "Python tests.pytest.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.test_petStoreApiTests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "iteration-03-without-docker",
+    "last_opened_file_path": "/home/koval_i/PycharmProjects/autotests-api",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -95,7 +99,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_pet_api.test_upload_pet_image" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,7 +110,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;archive_old.test_petStoreApi.TestStoreApi.test_get_info&quot;" />
+      <option name="_new_target" value="&quot;test_pet_api.test_upload_pet_image&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -157,18 +161,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.test_petStoreApiTests" />
+      <item itemvalue="Python tests.Python tests for test_pet_api.test_upload_pet_image" />
       <item itemvalue="Python tests.Python tests in test_pet_api.py" />
       <item itemvalue="Python tests.Python tests in test_store_api.py" />
-      <item itemvalue="Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info" />
       <item itemvalue="Python tests.pytest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests in test_pet_api.py" />
+        <item itemvalue="Python tests.Python tests for test_pet_api.test_upload_pet_image" />
         <item itemvalue="Python tests.Python tests in test_store_api.py" />
         <item itemvalue="Python tests.pytest" />
         <item itemvalue="Python.test_petStoreApiTests" />
-        <item itemvalue="Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info" />
       </list>
     </recent_temporary>
   </component>
@@ -323,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757404404190</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added test_find_pet_by_id, wait_for_pet, test_update_pet_with_form">
+      <option name="closed" value="true" />
+      <created>1757515971294</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1757515971294</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -342,6 +354,7 @@
     <MESSAGE value="added new structure(global refactor),new chapter PetApi" />
     <MESSAGE value="added fixes to test_pet_api.py, test_store_api.py" />
     <MESSAGE value="added test_update_pet, test_find_pet_by_status" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test_update_pet, test_find_pet_by_status" />
+    <MESSAGE value="added test_find_pet_by_id, wait_for_pet, test_update_pet_with_form" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test_find_pet_by_id, wait_for_pet, test_update_pet_with_form" />
   </component>
 </project>

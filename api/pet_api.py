@@ -27,3 +27,8 @@ class PetApi:
     def update_pet_with_form_data(self,pet_id: int,pet_body:dict):
         with allure.step("POST  /pet/{petId}"):
             return self.client.post_form(f"/pet/{pet_id}", body=pet_body)
+
+    def delete_pet(self,pet_id:int):
+        with allure.step("DELETE /pet/{petId}"):
+            return self.client.delete(f"/pet/{pet_id}")
+

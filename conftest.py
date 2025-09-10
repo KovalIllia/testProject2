@@ -1,6 +1,7 @@
 import pytest
 
 from api.base_api import ApiClient
+from api.files_api import FilesApi
 from api.store_api import StoreApi
 from api.pet_api import PetApi
 from factories.order_factory import OrderFactory
@@ -33,3 +34,11 @@ def create_pet(pet_api):
     pet_body = PetFactory.default_pet(name="Rex", status="available")
     response = pet_api.add_pet(pet_body)
     return response
+
+@pytest.fixture(scope="session")
+def files_client(logger):
+    return FilesApi(base_url="https://petstore.swagger.io/v2", logger=logger)
+
+@pytest.fixture(scope="session")
+def logger():
+    return Logger

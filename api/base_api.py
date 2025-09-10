@@ -6,9 +6,10 @@ import requests
 
 
 class ApiClient:
-    base_url = "https://petstore.swagger.io/v2"
 
-    def __init__(self, logger):
+
+    def __init__(self, logger, base_url: str = "https://petstore.swagger.io/v2",):
+        self.base_url=base_url
         self.logger = logger
 
     def build_url(self, resource: str) -> str:
@@ -48,3 +49,4 @@ class ApiClient:
         response = requests.post(url, data=body)
         self.logger.add_response(response, body=body)
         return response
+
