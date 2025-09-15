@@ -1,3 +1,8 @@
-allure-pytest
 requests
+faker
+allure-pytest
 pytest
+pytest-html
+pytest-xdist
+pytest-mock
+pytest-rerunfailures

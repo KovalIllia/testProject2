@@ -4,8 +4,8 @@ from api.base_api import ApiClient
 from api.files_api import FilesApi
 from api.store_api import StoreApi
 from api.pet_api import PetApi
-from factories.order_factory import OrderFactory
-from factories.pet_factory import PetFactory
+from tests.factories.order_factory import OrderFactory
+from tests.factories.pet_factory import PetFactory
 from utils.logger import Logger
 
 """ --- FIXTURES --- """

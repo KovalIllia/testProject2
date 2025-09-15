@@ -1,7 +1,7 @@
 import time
 
-from factories.file_factory import FileFactory
-from factories.pet_factory import UpdatePetFactory
+from tests.factories.file_factory import FileFactory
+from tests.factories.pet_factory import UpdatePetFactory
 from utils.checking_methods import Checking
 
 """Initialize the clients"""
