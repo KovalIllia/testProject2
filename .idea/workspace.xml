@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added test_delete_pet">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added Docker container">
+      <change afterPath="$PROJECT_DIR$/scripts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/run_tests.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_petStoreApiTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pet_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_store_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_store_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_result/3d3d1e20-6d84-468a-a8ee-0cdddab2d04e-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_result/d310eed0-70d5-4c1d-b634-ace57fcc841a-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_result/ed06873d-6354-49bb-a80d-fcf59ef32cfd-result.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,9 @@
     "Python tests.Python tests for test_pet_api.test_upload_pet_image.executor": "Run",
     "Python tests.Python tests in test_petStoreApi.py.executor": "Run",
     "Python tests.Python tests in test_petStoreApiTests.py.executor": "Run",
+    "Python tests.Python tests in test_pet_api.py (1).executor": "Run",
     "Python tests.Python tests in test_pet_api.py.executor": "Run",
+    "Python tests.Python tests in test_store_api.py (1).executor": "Run",
     "Python tests.Python tests in test_store_api.py.executor": "Run",
     "Python tests.pytest.executor": "Run",
     "Python.main.executor": "Run",
@@ -75,29 +76,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_pet_api.py">
-    <configuration name="test_petStoreApiTests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testProject2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_petStoreApiTests.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Python tests in test_store_api.py (1)">
     <configuration name="Python tests for test_pet_api.test_upload_pet_image" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
@@ -113,6 +92,21 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in test_pet_api.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="testProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_pet_api.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests in test_pet_api.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
@@ -125,6 +119,21 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/test_pet_api.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_store_api.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="testProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_store_api.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -143,35 +152,20 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest" type="tests" factoryName="Autodetect" temporary="true">
-      <module name="testProject2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_petStoreApiTests.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.test_petStoreApiTests" />
+      <item itemvalue="Python tests.Python tests in test_pet_api.py (1)" />
+      <item itemvalue="Python tests.Python tests in test_store_api.py (1)" />
       <item itemvalue="Python tests.Python tests for test_pet_api.test_upload_pet_image" />
       <item itemvalue="Python tests.Python tests in test_pet_api.py" />
       <item itemvalue="Python tests.Python tests in test_store_api.py" />
-      <item itemvalue="Python tests.pytest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in test_store_api.py (1)" />
+        <item itemvalue="Python tests.Python tests in test_pet_api.py (1)" />
         <item itemvalue="Python tests.Python tests in test_pet_api.py" />
         <item itemvalue="Python tests.Python tests for test_pet_api.test_upload_pet_image" />
         <item itemvalue="Python tests.Python tests in test_store_api.py" />
-        <item itemvalue="Python tests.pytest" />
-        <item itemvalue="Python.test_petStoreApiTests" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757515971294</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added Docker container">
+      <option name="closed" value="true" />
+      <created>1757962517137</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1757962517137</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -354,6 +356,7 @@
     <MESSAGE value="added fixes to test_pet_api.py, test_store_api.py" />
     <MESSAGE value="added test_update_pet, test_find_pet_by_status" />
     <MESSAGE value="added test_find_pet_by_id, wait_for_pet, test_update_pet_with_form" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test_find_pet_by_id, wait_for_pet, test_update_pet_with_form" />
+    <MESSAGE value="added Docker container" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Docker container" />
   </component>
 </project>
