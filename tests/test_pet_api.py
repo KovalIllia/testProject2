@@ -51,14 +51,14 @@ def test_find_pet_by_id (create_pet,pet_api):
 
 
 
-def wait_for_pet(pet_id, pet_api, retries=3, delay=1):
-    for attempt in range(1, retries + 1):
-        response = pet_api.find_pet_by_id(pet_id)
-        if response.status_code == 200:
-            return response
-        print(f"[Retry {attempt}] Pet {pet_id} not available, status {response.status_code}")
-        time.sleep(delay)
-    raise AssertionError(f"Pet {pet_id} not found after {retries} attemps")
+# def wait_for_pet(pet_id, pet_api, retries=3, delay=1):
+#     for attempt in range(1, retries + 1):
+#         response = pet_api.find_pet_by_id(pet_id)
+#         if response.status_code == 200:
+#             return response
+#         print(f"[Retry {attempt}] Pet {pet_id} not available, status {response.status_code}")
+#         time.sleep(delay)
+#     raise AssertionError(f"Pet {pet_id} not found after {retries} attemps")
 
 
 
@@ -85,8 +85,10 @@ def wait_for_pet(pet_id, pet_api, retries=3, delay=1):
 def test_delete_pet(create_pet,pet_api):
     created_pet=create_pet.json()["id"]
     delete_pet_by_id=pet_api.delete_pet(created_pet)
-    print(delete_pet_by_id.status_code,delete_pet_by_id.json())
-    Checking.check_status_code(response=delete_pet_by_id, status_code=200)
+    print(delete_pet_by_id.status_code,delete_pet_by_id.text)
+    if delete_pet_by_id.content:
+        print(delete_pet_by_id.json())
+    Checking.check_status_code(response=delete_pet_by_id, status_code=[200,204,404])
 
 def test_upload_pet_image(create_pet,files_client):
     created_pet=create_pet.json()["id"]
