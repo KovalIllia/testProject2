@@ -24,7 +24,7 @@ This project **does not include**:
 ├── **tests**/ # main tests
 
 │ ├── **factories**/ # test data factories
-│ ├── **utils**/ # utilities and helpers
+│ 
 
 │ ├── **test_pet_api.py**
 
@@ -32,6 +32,7 @@ This project **does not include**:
 
 │ └── **test_petStoreApiTests.py**
 
+├── **utils**/ # utilities and helpers
 
 ├── **conftest.py** # global pytest fixtures
 
