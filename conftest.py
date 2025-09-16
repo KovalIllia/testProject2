@@ -4,8 +4,8 @@ from api.base_api import ApiClient
 from api.files_api import FilesApi
 from api.store_api import StoreApi
 from api.pet_api import PetApi
-from factories.order_factory import OrderFactory
-from factories.pet_factory import PetFactory
+from tests.factories.order_factory import OrderFactory
+from tests.factories.pet_factory import PetFactory
 from utils.logger import Logger
 
 """ --- FIXTURES --- """
@@ -29,7 +29,7 @@ def place_order_for_a_pet(store_api):
     response = store_api.place_order(order_body)
     return response
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def create_pet(pet_api):
     pet_body = PetFactory.default_pet(name="Rex", status="available")
     response = pet_api.add_pet(pet_body)

@@ -9,11 +9,15 @@ class Checking():
     """method for checking status code"""
     @staticmethod
     def check_status_code(response: requests.Response, status_code:int):
-        assert response.status_code == status_code# espectedResult==actualResult
-        if response.status_code==status_code:
-            print(f"success! status code: {response.status_code}")
+        if isinstance(status_code,(list,tuple,set)):
+            assert response.status_code in status_code,f"Expected {status_code},but got {response.status_code}"
         else:
-            print(f"failed!error! status code: {response.status_code}")
+            assert response.status_code==status_code,f"Expected {status_code}, but got {response.status_code}"
+        # assert response.status_code == status_code# espectedResult==actualResult
+        # if response.status_code==status_code:
+        #     print(f"success! status code: {response.status_code}")
+        # else:
+        #     print(f"failed!error! status code: {response.status_code}")
 
 
 
