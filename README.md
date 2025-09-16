@@ -17,17 +17,28 @@ This project **does not include**:
 
 ## Project structure
 
-├── **api***/ # clients to call the API
+├── **api**/ # clients to call the API
+
 ├── **scripts**/ # helper scripts to run
+
 ├── **tests**/ # main tests
+
 │ ├── **factories**/ # test data factories
 │ ├── **utils**/ # utilities and helpers
+
 │ ├── **test_pet_api.py**
+
 │ ├── **test_store_api.py**
+
 │ └── **test_petStoreApiTests.py**
+
+
 ├── **conftest.py** # global pytest fixtures
+
 ├── **requirements.txt** # Python dependencies
+
 ├── **pytest.ini** # pytest configuration
+
 ├── **Dockerfile** # build environment in Docker
 
 
@@ -43,30 +54,26 @@ This project **does not include**:
 
 ## Install and Run 
 **Local**
-```bash
-# Clone the repository
-git clone https://github.com/username/testProject2.git
+git clone https://github.com/username/testProject2.git # Clone the repository
 cd testProject2
 
-# Create a virtual environment and install dependencies
+**Create a virtual environment and install dependencies**
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# Run tests with Allure report generation
+**Run tests with Allure report generation**
 pytest --alluredir=allure_report
-
-
 
 
 
 
 ## Docker
 
-# Build the image
+**Build the image**
 docker build -t pytest_runner .
 
-# Run tests with result mapping
+**Run tests with result mapping**
 docker run --rm -v $(pwd)/test_result:/app/test_result pytest_runner
 
 
