@@ -16,6 +16,7 @@ This project **does not include**:
 - load testing.
 
 ## Project structure
+
 ├── **api***/ # clients to call the API
 ├── **scripts**/ # helper scripts to run
 ├── **tests**/ # main tests
@@ -40,8 +41,8 @@ This project **does not include**:
 
 
 
-**Install and Run**
-## Local
+## Install and Run 
+**Local**
 ```bash
 # Clone the repository
 git clone https://github.com/username/testProject2.git
@@ -57,7 +58,11 @@ pytest --alluredir=allure_report
 
 
 
+
+
+
 ## Docker
+
 # Build the image
 docker build -t pytest_runner .
 
