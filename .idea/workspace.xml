@@ -7,14 +7,8 @@
     <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added Allure script">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_result/3d3d1e20-6d84-468a-a8ee-0cdddab2d04e-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_result/d310eed0-70d5-4c1d-b634-ace57fcc841a-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_result/ed06873d-6354-49bb-a80d-fcf59ef32cfd-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/factories/pet_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/factories/pet_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_petStoreApiTests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pet_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_store_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_store_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/checking_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/checking_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "iteration-04-add-docker",
+    "git-widget-placeholder": "iteration-05-test-reafactoring",
     "last_opened_file_path": "/home/koval_i/PycharmProjects/autotests-api",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }

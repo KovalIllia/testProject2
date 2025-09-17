@@ -16,7 +16,7 @@ class Logger():
             logger_file.write(data)
 
     @classmethod
-    def add_request(cls,url:str, method: str,body:None):
+    def add_request(cls,url:str, method: str,body:None,files_meta=None):
         test_name=os.environ.get("PYTEST_CURRENT_TEST")#назва тесту який виконується
 
         data_to_add = f"\n-----\n"#дані які додаються з переносами і пробілами
@@ -33,7 +33,7 @@ class Logger():
 
 
     @classmethod
-    def add_response(cls,response,body=None,endpoint_name:str=None):
+    def add_response(cls,response,body=None,endpoint_name:str=None,files_meta=None):
         data_to_add=""
         if endpoint_name:
             data_to_add+=f"Endpoint: {endpoint_name}\n"

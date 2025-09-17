@@ -35,6 +35,7 @@ def create_pet(pet_api):
     response = pet_api.add_pet(pet_body)
     return response
 
+
 @pytest.fixture(scope="session")
 def files_client(logger):
     return FilesApi(base_url="https://petstore.swagger.io/v2", logger=logger)

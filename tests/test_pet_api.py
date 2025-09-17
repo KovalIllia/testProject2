@@ -51,17 +51,6 @@ def test_find_pet_by_id (create_pet,pet_api):
 
 
 
-# def wait_for_pet(pet_id, pet_api, retries=3, delay=1):
-#     for attempt in range(1, retries + 1):
-#         response = pet_api.find_pet_by_id(pet_id)
-#         if response.status_code == 200:
-#             return response
-#         print(f"[Retry {attempt}] Pet {pet_id} not available, status {response.status_code}")
-#         time.sleep(delay)
-#     raise AssertionError(f"Pet {pet_id} not found after {retries} attemps")
-
-
-
 def test_update_pet_with_form(create_pet,pet_api):
     created_pet=create_pet.json()["id"]
     wait_for_pet(created_pet,pet_api,retries=5,delay=1)
