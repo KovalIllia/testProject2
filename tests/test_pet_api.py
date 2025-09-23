@@ -4,19 +4,7 @@ from tests.factories.file_factory import FileFactory
 from tests.factories.pet_factory import UpdatePetFactory
 from utils.checking_methods import Checking
 
-"""Initialize the clients"""
 
-
-# logger=Logger()
-# client=ApiClient(logger)
-# pet_api_client=PetApi(client)
-
-
-# @pytest.fixture(scope="session")
-# def create_pet(pet_api):
-#     pet_body=PetFactory.default_pet(status="available")
-#     response=pet_api_client.add_pet(pet_body)
-#     return response
 
 def test_add_pet(create_pet, pet_api):
     print(create_pet.status_code, create_pet.json())
@@ -87,4 +75,3 @@ def test_upload_pet_image(create_pet,files_client):
 
     print(upload_result.status_code,upload_result.json())
     Checking.check_status_code(response=upload_result,status_code=200)
-    # Checking.check_message_contains(response=upload_result,expected_substring="smiled_dog")

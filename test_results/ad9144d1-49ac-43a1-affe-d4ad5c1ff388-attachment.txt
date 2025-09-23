@@ -1,4 +1,0 @@
-200 {'id': 796, 'category': {'id': 670, 'name': 'agent'}, 'name': 'Donald', 'photoUrls': ['https://picsum.photos/815/684'], 'tags': [{'id': 291, 'name': 'wrong'}], 'status': 'available'}
-success! status code: 200
-status --- is correct
-all required field are presented

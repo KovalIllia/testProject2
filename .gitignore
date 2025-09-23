@@ -2,3 +2,10 @@
 .pytest_cache
 __pycache__/
 logs/*
+allure-results/
+allure-report/
+test_result/
+test_results/
+logs/
+*.log
+how*

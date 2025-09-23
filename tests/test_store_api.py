@@ -11,20 +11,13 @@ import allure
 from allure_commons.types import Severity
 
 
-"""Initialize the clients"""
-# conftest.py# conftest.py
-# logger=Logger()
-# client=ApiClient(logger)
-# store_api=StoreApi(client)
-
 
 def test_get_inventories_by_status(store_api):
     get_inventories=store_api.get_inventory()
     print(get_inventories.status_code,get_inventories.json())
     Checking.check_status_code(response=get_inventories,status_code=200)
 
-# @allure.epic('Tests related access to Petstore orders')
-# @allure.severity(Severity.CRITICAL)
+
 def test_create_first_order(place_order_for_a_pet):
     print("Created order:", place_order_for_a_pet.json())
     print(place_order_for_a_pet.status_code,place_order_for_a_pet.json())
@@ -58,4 +51,4 @@ def test_delete_purchase_order_by_id(place_order_for_a_pet,store_api):
     delete_purchase_order_by_id=store_api.delete_placed_order(order_id)
     print(delete_purchase_order_by_id.status_code,delete_purchase_order_by_id.json())
     Checking.check_status_code(response=delete_purchase_order_by_id,status_code=200)
-    # Checking.check_status_code(response=delete_purchase_order_by_id,status_code=200)
+

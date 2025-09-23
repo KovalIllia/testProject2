@@ -1,5 +1,0 @@
-Response status: 404
-Response body: {"code":404,"type":"unknown","message":"Order Not Found"}
------
-
-404 {'code': 404, 'type': 'unknown', 'message': 'Order Not Found'}
