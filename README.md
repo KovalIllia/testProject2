@@ -15,33 +15,6 @@ This project **does not include**:
 - UI testing;
 - load testing.
 
-## Project structure
-
-├── **api**/ # clients to call the API
-
-├── **scripts**/ # helper scripts to run
-
-├── **tests**/ # main tests
-
-│ ├── **factories**/ # test data factories
-│ 
-
-│ ├── **test_pet_api.py**
-
-│ ├── **test_store_api.py**
-
-│ └── **test_petStoreApiTests.py**
-
-├── **utils**/ # utilities and helpers
-
-├── **conftest.py** # global pytest fixtures
-
-├── **requirements.txt** # Python dependencies
-
-├── **pytest.ini** # pytest configuration
-
-├── **Dockerfile** # build environment in Docker
-
 
 
 ## Technologies used
