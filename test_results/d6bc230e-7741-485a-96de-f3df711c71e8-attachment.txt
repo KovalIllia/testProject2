@@ -1,0 +1,6 @@
+Response status: 200
+Response body: {"code":200,"type":"unknown","message":"additionalMetadata: null\nFile uploaded to ./dog.png, 34370 bytes"}
+-----
+
+200 {'code': 200, 'type': 'unknown', 'message': 'additionalMetadata: null\nFile uploaded to ./dog.png, 34370 bytes'}
+success! status code: 200

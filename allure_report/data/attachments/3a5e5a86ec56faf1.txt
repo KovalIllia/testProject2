@@ -1,0 +1,8 @@
+Response status: 200
+Response body: {"id":2088,"petId":2517,"quantity":3,"shipDate":"2025-09-15T22:36:00.439+0000","status":"placed","complete":true}
+-----
+
+200 {'id': 2088, 'petId': 2517, 'quantity': 3, 'shipDate': '2025-09-15T22:36:00.439+0000', 'status': 'placed', 'complete': True}
+success! status code: 200
+status --- is correct
+all required field are presented
