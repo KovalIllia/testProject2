@@ -1,21 +1,28 @@
 #!/bin/bash
 
-# Крок 1: Очищуємо папку з результатами перед кожним запуском.
-if [ -d "./test_results" ]; then
-    rm -rf ./test_results
+
+BASE_DIR="./allure"
+RESULTS_DIR="$BASE_DIR/allure-results"
+REPORT_DIR="$BASE_DIR/allure-report"
+
+mkdir -p "$BASE_DIR"
+
+
+if [ -d "$RESULTS_DIR" ]; then
+    rm -rf "$RESULTS_DIR"
 fi
 
-# Крок 2: Запускаємо тести, які згенерують нові JSON-файли.
-pytest --alluredir=./test_results
+if [ -d "$REPORT_DIR" ]; then
+    rm -rf "$REPORT_DIR"
+fi
 
-# Крок 3: Перевіряємо, чи були згенеровані результати, перш ніж генерувати звіт.
-if [ -d "./test_results" ]; then
-    # Генеруємо HTML-звіт і зберігаємо його в папці allure_report.
-    allure generate ./test_results --clean -o ./allure_report
 
-    # Крок 4: Автоматично відкриваємо звіт в браузері.
-    allure open ./allure_report
+pytest --alluredir="$RESULTS_DIR"
+
+
+if [ -d "$RESULTS_DIR" ] && [ "$(ls -A $RESULTS_DIR)" ]; then
+    allure generate "$RESULTS_DIR" --clean -o "$REPORT_DIR"
+    allure open "$REPORT_DIR"
 else
-    # Якщо тести не створили результатів, виводимо відповідне повідомлення.
     echo "No test results were found to generate a report."
 fi

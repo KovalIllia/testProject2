@@ -47,13 +47,3 @@ class Logger():
 
         print(data_to_add)
         cls.write_log_to_file(data_to_add)
-        # cookie_as_dict=dict(result.cookies)#поміщ в файл
-        # headers_as_dict=dict(result.headers)#поміщ в файл
-        #
-        # data_to_add = f"Response code: {result.status_code}\n"#які дані ще додаються в файл -- при оголошенні тільки "=", а не "+="
-        # data_to_add += f"Response text: {result.text}\n"#які дані ще додаються в файл
-        # data_to_add += f"Response headers: {headers_as_dict}\n"#які дані ще додаються в файл
-        # data_to_add += f"Response cookies: {cookie_as_dict}\n"#які дані ще додаються в файл
-        # data_to_add += f"\n-----\n"  # string для розділення
-        #
-        # cls.write_log_to_file(data_to_add)

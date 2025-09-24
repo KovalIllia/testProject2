@@ -4,10 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added Allure script">
+    <list default="true" id="b8ff01f6-eddc-4634-8e1d-3c4b2f04ad81" name="Changes" comment="added minor changes 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/3a5e5a86ec56faf1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/42cb2c10829eaaad.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/7efd8bfb1151cf0d.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/9b77e6b110c0cdec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/a952a529a40d0087.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/c471b35e28460f0d.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/c91cfd3f69eba268.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/c961ed9e55eccd6b.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/d301d97762968272.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/e818d05a65f21e29.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/attachments/eec6981de4b4d7af.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/behaviors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/behaviors.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/behaviors.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/behaviors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/categories.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/categories.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/categories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/packages.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/packages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/suites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/suites.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/suites.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/suites.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/1ab5cfc60cda29d2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/2fb1c939352d5897.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/3a208f68229aa0ca.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/59e055cedacc1ff3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/739c1b1ec7f3da43.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/7eebcfeaa96e388d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/85e2411371cd580d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/aca9c237313484c0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/cfc6f2a1f41564fd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/f3ce1668ec7c62c4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/test-cases/f52ba38654caeee1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/data/timeline.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/data/timeline.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/export/influxDbData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/export/influxDbData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/export/prometheusData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/export/prometheusData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/history/categories-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/history/categories-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/history/duration-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/history/duration-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/history/history-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/history/history-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/history/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/history/history.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/categories-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/categories-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/categories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/duration-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/duration-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/duration.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/duration.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/history-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/history-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/severity.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/severity.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/status-chart.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/status-chart.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/suites.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/suites.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure_report/widgets/summary.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure_report/widgets/summary.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_pet_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pet_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_tests.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run_tests.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +70,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="iteration-06-refactor/tests-structure" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -45,30 +97,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_pet_api.test_upload_pet_image.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_petStoreApi.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_petStoreApiTests.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_pet_api.py (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_pet_api.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_store_api.py (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_store_api.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.order_factory.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pet_factory.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_petStoreApiTests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;iteration-05-test-reafactoring&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/koval_i/PycharmProjects/autotests-api&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for archive_old.test_petStoreApi.TestStoreApi.test_get_info.executor": "Run",
+    "Python tests.Python tests for test_pet_api.test_upload_pet_image.executor": "Run",
+    "Python tests.Python tests in test_petStoreApi.py.executor": "Run",
+    "Python tests.Python tests in test_petStoreApiTests.py.executor": "Run",
+    "Python tests.Python tests in test_pet_api.py (1).executor": "Run",
+    "Python tests.Python tests in test_pet_api.py.executor": "Run",
+    "Python tests.Python tests in test_store_api.py (1).executor": "Run",
+    "Python tests.Python tests in test_store_api.py.executor": "Run",
+    "Python tests.pytest.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.order_factory.executor": "Run",
+    "Python.pet_factory.executor": "Run",
+    "Python.test_petStoreApiTests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/koval_i/PycharmProjects/autotests-api",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -76,8 +128,8 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_store_api.py (1)">
-    <configuration name="order_factory" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="test_petStoreApiTests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,11 +138,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/factories" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/factories/order_factory.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_petStoreApiTests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,29 +151,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pet_factory" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testProject2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/factories" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/factories/pet_factory.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in test_pet_api.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_pet_api.test_upload_pet_image" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,8 +162,8 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_pet_api.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_pet_api.test_upload_pet_image&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests in test_pet_api.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -151,7 +181,7 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_store_api.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_store_api.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="testProject2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,24 +192,39 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_store_api.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_store_api.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest" type="tests" factoryName="Autodetect" temporary="true">
+      <module name="testProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_petStoreApiTests.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.order_factory" />
-      <item itemvalue="Python.pet_factory" />
-      <item itemvalue="Python tests.Python tests in test_pet_api.py (1)" />
+      <item itemvalue="Python.test_petStoreApiTests" />
+      <item itemvalue="Python tests.Python tests for test_pet_api.test_upload_pet_image" />
+      <item itemvalue="Python tests.Python tests in test_store_api.py" />
+      <item itemvalue="Python tests.pytest" />
       <item itemvalue="Python tests.Python tests in test_pet_api.py" />
-      <item itemvalue="Python tests.Python tests in test_store_api.py (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in test_store_api.py (1)" />
-        <item itemvalue="Python tests.Python tests in test_pet_api.py (1)" />
-        <item itemvalue="Python.order_factory" />
-        <item itemvalue="Python.pet_factory" />
+        <item itemvalue="Python tests.pytest" />
+        <item itemvalue="Python tests.Python tests in test_store_api.py" />
         <item itemvalue="Python tests.Python tests in test_pet_api.py" />
+        <item itemvalue="Python tests.Python tests for test_pet_api.test_upload_pet_image" />
+        <item itemvalue="Python.test_petStoreApiTests" />
       </list>
     </recent_temporary>
   </component>

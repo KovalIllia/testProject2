@@ -1,6 +1,0 @@
-Response status: 200
-Response body: {"sold":28,"string":518,"sold ":1,"NOT available":1,"unavailable":2,"pending":25,"available":346,"weisskeiner1":1,"jhjh":1,"peric":6,"Sold":1,"4":1,"available, sold":1,"available_DEV":1,"vБ":1}
------
-
-200 {'sold': 28, 'string': 518, 'sold ': 1, 'NOT available': 1, 'unavailable': 2, 'pending': 25, 'available': 346, 'weisskeiner1': 1, 'jhjh': 1, 'peric': 6, 'Sold': 1, '4': 1, 'available, sold': 1, 'available_DEV': 1, 'vБ': 1}
-success! status code: 200

@@ -8,7 +8,6 @@ from tests.factories.order_factory import OrderFactory
 from tests.factories.pet_factory import PetFactory
 from utils.logger import Logger
 
-""" --- FIXTURES --- """
 
 @pytest.fixture(scope="session")
 def api_client():
