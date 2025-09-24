@@ -30,9 +30,7 @@ def place_order_for_a_pet(store_api):
 
 @pytest.fixture(scope="function")
 def create_pet(pet_api):
-    pet_body = PetFactory.default_pet(name="Rex", status="available")
-    response = pet_api.add_pet(pet_body)
-    return response
+    return PetFactory.default_pet(name="Rex", status="available")
 
 
 @pytest.fixture(scope="session")

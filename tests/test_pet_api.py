@@ -1,17 +1,23 @@
 import time
 
+from conftest import create_pet
 from tests.factories.file_factory import FileFactory
 from tests.factories.pet_factory import UpdatePetFactory
 from utils.checking_methods import Checking
 
 
 
-def test_add_pet(create_pet, pet_api):
-    print(create_pet.status_code, create_pet.json())
-    Checking.check_status_code(response=create_pet, status_code=200)
-    Checking.check_json_value(response=create_pet, field_name="status", expected_value="available")
-    Checking.check_json_answer(response=create_pet,
-                               expected_value=["id", "category", "name", "photoUrls", "tags", "status"])
+
+def test_add_pet(pet_api,create_pet):
+
+    data_from_fixture=create_pet
+
+    creating_pet=pet_api.add_pet(data_from_fixture)
+
+    Checking.check_status_code(response=creating_pet, status_code=200)
+    Checking.check_json_value(response=creating_pet, field_name="status", expected_value="available")
+    Checking.check_json_answer(response=creating_pet,expected_fields=["id", "category", "name", "photoUrls", "tags", "status"])
+
 
 
 def test_update_pet(create_pet, pet_api):
