@@ -29,10 +29,8 @@ def place_order_for_a_pet(store_api):
     return response
 
 @pytest.fixture(scope="function")
-def create_pet(pet_api):
+def pet_payload(pet_api):
     return PetFactory.default_pet(name="Rex", status="available")
-
-
 
 
 @pytest.fixture(scope="session")

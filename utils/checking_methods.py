@@ -19,7 +19,7 @@ class Checking():
 
 
     @staticmethod
-    def check_json_answer(response: requests.Response, expected_fields):
+    def check_json_answer(response: requests.Response, expected_value):
         json_answer = response.json()
 
         if not json_answer:
@@ -35,7 +35,7 @@ class Checking():
 
         actual_keys = list(data_to_check.keys())
 
-        for field in expected_fields:
+        for field in expected_value:
             assert field in actual_keys, f"Ecspected response: '{field}', but actual result is different: '{actual_keys}'"
 
 

@@ -29,5 +29,11 @@ class PetFactory:
 class UpdatePetFactory:
     @staticmethod
     def update_pet_with_name_and_status(name: str = None, status: str = None) -> dict:
-       return {"name":name if name is not None else"Topik",
-               "status":status if status is not None else "available"}
+        body = {}
+        if name:
+            body["name"] = name
+        if status:
+            body["status"] = status
+        return body
+       # return {"name":name if name is not None else"Topik",
+       #         "status":status if status is not None else "available"}
