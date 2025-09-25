@@ -33,6 +33,8 @@ def create_pet(pet_api):
     return PetFactory.default_pet(name="Rex", status="available")
 
 
+
+
 @pytest.fixture(scope="session")
 def files_client(logger):
     return FilesApi(base_url="https://petstore.swagger.io/v2", logger=logger)

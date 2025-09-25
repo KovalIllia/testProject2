@@ -21,11 +21,23 @@ def test_add_pet(pet_api,create_pet):
 
 
 def test_update_pet(create_pet, pet_api):
-    print(create_pet.status_code, create_pet.json())
-    Checking.check_status_code(response=create_pet, status_code=200)
-    Checking.check_json_value(response=create_pet, field_name="status", expected_value="available")
-    Checking.check_json_answer(response=create_pet,
-                               expected_value=["id", "category", "name", "photoUrls", "tags", "status"])
+
+    creating_pet_response = pet_api.add_pet(create_pet)
+    original_pet_data=dict(creating_pet_response.json())
+
+    update_fields=UpdatePetFactory.update_pet_with_name_and_status(name="Alfred",
+                                                                   status="sold")
+
+    copied_pet_data=original_pet_data.copy()
+    copied_pet_data.update(update_fields)
+    updated_pet=pet_api.update_pet(copied_pet_data)
+
+    Checking.check_status_code(response=updated_pet, status_code=200)
+    Checking.check_json_value(response=updated_pet, field_name="status", expected_value="sold")
+    Checking.check_json_value(response=updated_pet,field_name="name",expected_value="Alfred")
+    Checking.check_json_answer(response=updated_pet,
+                               expected_fields=["id", "category", "name", "photoUrls", "tags", "status"])
+
 
 
 def test_find_pet_by_status(pet_api):
