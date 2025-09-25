@@ -5,42 +5,62 @@ import pytest
 
 class Checking():
 
-
-    """method for checking status code"""
-
     @staticmethod
     def check_status_code(response: requests.Response, status_code):
-        match status_code:
-            case list() | tuple() | set():
-                assert response.status_code in status_code,(f"Expected result: status code:{status_code}, "
-                                                          f"but actual result: status code: {response.status_code}")
-            case int():
-                assert response.status_code == status_code,(f"Expected result: status code:{status_code}, "
-                                                          f"but actual result: status code: {response.status_code}")
-            case str() | None:
-                raise TypeError(f"Unsupported type for status_code: status code:{type(status_code).__name__}, "
-                                                          f"but actual result: status code: {response.status_code}")
+        """
+        Checks the response status code. Can handle a single integer or a list/tuple of integers.
+        """
+        if isinstance(status_code, (list, tuple)):
+            assert response.status_code in status_code, \
+                f"Expected status codes: {status_code}, but got: {response.status_code}"
+        else:
+            assert response.status_code == status_code, \
+                f"Expected status code: {status_code}, but got: {response.status_code}"
 
 
-
-
-
-
-    """method for checking for required FIELDS in a query response"""
     @staticmethod
     def check_json_answer(response: requests.Response, expected_fields):
-        json_answer=json.loads(response.text)
-        actual_keys_fields=list(json_answer.keys())
-        assert set(actual_keys_fields)==set(expected_fields), f"Expected fields: {expected_fields}, but got: {actual_keys_fields}"
+        json_answer = response.json()
+
+        if not json_answer:
+            raise AssertionError("Response JSON is empty.")
+
+
+        if isinstance(json_answer, list):
+            data_to_check = json_answer[0]
+        elif isinstance(json_answer, dict):
+            data_to_check = json_answer
+        else:
+            raise TypeError(f"unexpected response format from the server. Check the response format : {type(json_answer)}")
+
+        actual_keys = list(data_to_check.keys())
+
+        for field in expected_fields:
+            assert field in actual_keys, f"Ecspected response: '{field}', but actual result is different: '{actual_keys}'"
 
 
 
-    """method for checking for required fields VALUES in a query response"""
+
     @staticmethod
     def check_json_value(response: requests.Response, field_name, expected_value):
-        check=response.json()
-        check_info=check.get(field_name)
-        assert check_info==expected_value,f"Field '{field_name}' mismatch. Expected: {expected_value}, got: {check_info}"
+        check = response.json()
+
+        if not check:
+            raise AssertionError("Response JSON is empty")
+
+        if isinstance(check, list):
+            """If it is a list, you need to check each element."""
+            for pet in check:
+                assert pet.get(field_name) == expected_value, \
+                    f"Value for field '{field_name}' in list mismatch. Expected: '{expected_value}', but got: '{pet.get(field_name)}'"
+        elif isinstance(check, dict):
+            """If it's a dictionary, you need to check it directly."""
+            assert check.get(field_name) == expected_value, \
+                f"Value for field '{field_name}' in dict mismatch. Expected: '{expected_value}', but got: '{check.get(field_name)}'"
+        else:
+            raise TypeError(f"Unsupported JSON type: {type(check)}")
+
+
 
 
 

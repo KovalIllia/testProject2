@@ -1,7 +1,7 @@
 import allure
 
 from api.base_api import ApiClient
-
+from utils.enums import PetStatus
 
 class PetApi:
 
@@ -16,9 +16,9 @@ class PetApi:
         with allure.step("PUT /pet"):
             return self.client.put("/pet",body=pet_body)
 
-    def find_pet_by_status(self,status="available"):#pending/sold
+    def find_pet_by_status(self,status=PetStatus):#pending/sold
         with allure.step("GET /pet/findByStatus"):
-            return self.client.get(f"/pet/findByStatus?status={status}")
+            return self.client.get(f"/pet/findByStatus?status={status.value}")
 
     def find_pet_by_id(self, pet_id: int):
         with allure.step("GET /pet/{petId}"):

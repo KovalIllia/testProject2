@@ -4,7 +4,7 @@ from conftest import create_pet
 from tests.factories.file_factory import FileFactory
 from tests.factories.pet_factory import UpdatePetFactory
 from utils.checking_methods import Checking
-
+from utils.enums import PetStatus
 
 
 
@@ -40,9 +40,29 @@ def test_update_pet(create_pet, pet_api):
 
 
 
-def test_find_pet_by_status(pet_api):
-    get_available_pet=pet_api.find_pet_by_status()
-    print(get_available_pet.status_code,get_available_pet.json())
+
+
+
+
+
+
+
+
+
+
+
+
+def test_get_pets_by_status(create_pet,pet_api):
+    creating_pet_response=pet_api.add_pet(create_pet)
+
+    find_pet_by_response=pet_api.find_pet_by_status(status=PetStatus.AVAILABLE)
+
+    Checking.check_status_code(response=find_pet_by_response, status_code=200)
+    Checking.check_json_value(response=find_pet_by_response, field_name="status", expected_value="available")
+    Checking.check_json_answer(response=find_pet_by_response,
+                               expected_fields=["id", "category", "name", "photoUrls", "tags", "status"])
+
+
 
 
 
