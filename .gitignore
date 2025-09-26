@@ -1,11 +1,14 @@
 .idea
 .pytest_cache
 __pycache__/
-logs/*
+output/logs/*
 allure-results/
 allure-report/
 test_result/
 test_results/
-logs/
+output/logs/
 *.log
 how*
+secrets/
+output/
+output/allure/

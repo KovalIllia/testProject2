@@ -1,6 +1,6 @@
 import allure
 
-from api.base_api import ApiClient
+from src.api.base_api import ApiClient
 from utils.enums import PetStatus
 
 class PetApi:

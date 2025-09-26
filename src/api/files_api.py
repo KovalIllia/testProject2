@@ -1,7 +1,6 @@
-import allure
 import requests
 
-from api.base_api import ApiClient
+from src.api.base_api import ApiClient
 
 
 class FilesApi(ApiClient):

@@ -1,4 +1,5 @@
 import random
+import uuid
 
 from faker import Faker
 
@@ -7,18 +8,18 @@ fake = Faker()
 
 class PetFactory:
     @staticmethod
-    def default_pet(name=fake.first_name(), status="available") -> dict:
+    def default_pet(name=None, status="available") -> dict:
         return {
-            "id": random.randint(1, 1000),
+            "id": uuid.uuid4().int & (1 << 31) - 1,  # Unique id + character limit
             "category": {
-                "id": random.randint(1, 1000),
+                "id": uuid.uuid4().int & (1 << 31) - 1,
                 "name": fake.word()
             },
-            "name": fake.first_name(),
+            "name": name or fake.first_name(),
             "photoUrls": [fake.image_url()],
             "tags": [
                 {
-                    "id": random.randint(1, 1000),
+                    "id": uuid.uuid4().int & (1 << 31) - 1,
                     "name": fake.word()
                 }
             ],

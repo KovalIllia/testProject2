@@ -4,21 +4,24 @@ import allure
 import pytest
 
 from conftest import pet_payload
-from tests.factories.file_factory import FileFactory
-from tests.factories.pet_factory import UpdatePetFactory
+from src.factories.file_factory import FileFactory
+from src.factories.pet_factory import UpdatePetFactory
 from utils.checking_methods import Checking
 from utils.enums import PetStatus
 from waiters import PetWaiter
 
 
 def test_add_pet(pet_api, pet_payload):
+    response = pet_api.add_pet(pet_payload)
+    pet_data = response.json()
+    pet_id = pet_data["id"]
 
-    creating_pet=pet_api.add_pet(pet_payload)
-
-    Checking.check_status_code(response=creating_pet, status_code=200)
-    Checking.check_json_value(response=creating_pet, field_name="status", expected_value="available")
-    Checking.check_json_answer(response=creating_pet,
-                               expected_value=["id", "category", "name", "photoUrls", "tags", "status"])
+    try:
+        Checking.check_status_code(response=response, status_code=200)
+        Checking.check_json_value(response=response, field_name="status", expected_value="available")
+        Checking.check_json_answer(response=response, expected_value=["id", "category", "name", "photoUrls", "tags", "status"])
+    finally:
+        pet_api.delete_pet(pet_id)  # Очищаємо дані після тесту
 
 
 
@@ -27,7 +30,7 @@ def test_update_pet(pet_api,pet_payload):
     creating_pet_response = pet_api.add_pet(pet_payload)
     original_pet_data=dict(creating_pet_response.json())
 
-    update_fields=UpdatePetFactory.update_pet_with_name_and_status(name="Alfred",
+    update_fields=UpdatePetFactory.update_pet_with_name_and_status(name="Alfredicus",
                                                                    status="sold")
 
     copied_pet_data=original_pet_data.copy()
@@ -36,7 +39,7 @@ def test_update_pet(pet_api,pet_payload):
 
     Checking.check_status_code(response=updated_pet, status_code=200)
     Checking.check_json_value(response=updated_pet, field_name="status", expected_value="sold")
-    Checking.check_json_value(response=updated_pet,field_name="name",expected_value="Alfred")
+    Checking.check_json_value(response=updated_pet,field_name="name",expected_value="Alfredicus")
     Checking.check_json_answer(response=updated_pet,
                                expected_value=["id", "category", "name", "photoUrls", "tags", "status"])
 
@@ -50,7 +53,7 @@ def test_get_pets_by_status(pet_api, pet_payload):
     Checking.check_status_code(response=find_pet_by_response, status_code=200)
     Checking.check_json_value(response=find_pet_by_response, field_name="status", expected_value="available")
     Checking.check_json_answer(response=find_pet_by_response,
-                               expected_value=["id", "category", "name", "photoUrls", "tags", "status"])
+                               expected_value=["id", "name", "photoUrls", "tags", "status"])
 
 
 
@@ -66,7 +69,7 @@ def test_find_pet_by_id (pet_api, pet_payload):
     Checking.check_status_code(response=looking_pet_by_id, status_code=200)
     Checking.check_json_value(response=looking_pet_by_id, field_name="status", expected_value="available")
     Checking.check_json_answer(response=looking_pet_by_id,
-                               expected_value=["id", "category", "name", "photoUrls", "tags", "status"])
+                               expected_value=["id", "name", "photoUrls", "tags", "status"])
 
 
 

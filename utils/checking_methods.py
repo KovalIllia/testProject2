@@ -21,24 +21,51 @@ class Checking():
 
 
     @staticmethod
+    # def check_json_answer(response: requests.Response, expected_value):
+    #     json_answer = response.json()
+    #
+    #     if not json_answer:
+    #         raise AssertionError("Response JSON is empty.")
+    #
+    #
+    #     if isinstance(json_answer, list):
+    #         data_to_check = json_answer[0]
+    #     elif isinstance(json_answer, dict):
+    #         data_to_check = json_answer
+    #     else:
+    #         raise TypeError(f"unexpected response format from the server. Check the response format : {type(json_answer)}")
+    #
+    #     actual_keys = list(data_to_check.keys())
+    #
+    #     for field in expected_value:
+    #         assert field in actual_keys, f"Ecspected response: '{field}', but actual result is different: '{actual_keys}'"
     def check_json_answer(response: requests.Response, expected_value):
         json_answer = response.json()
 
         if not json_answer:
             raise AssertionError("Response JSON is empty.")
 
-
         if isinstance(json_answer, list):
             data_to_check = json_answer[0]
         elif isinstance(json_answer, dict):
             data_to_check = json_answer
         else:
-            raise TypeError(f"unexpected response format from the server. Check the response format : {type(json_answer)}")
+            raise TypeError(
+                f"unexpected response format from the server. Check the response format : {type(json_answer)}")
 
-        actual_keys = list(data_to_check.keys())
+        actual_keys = set(data_to_check.keys())
+        expected_keys = set(expected_value)
 
-        for field in expected_value:
-            assert field in actual_keys, f"Ecspected response: '{field}', but actual result is different: '{actual_keys}'"
+        # Check if all expected keys are present in actual keys
+        missing_keys = expected_keys - actual_keys
+        if missing_keys:
+            raise AssertionError(f"Expected keys {missing_keys} are missing. Actual keys: {actual_keys}")
+
+
+
+
+
+
 
 
 
