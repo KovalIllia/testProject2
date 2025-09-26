@@ -1,16 +1,17 @@
 import time
-
 import pytest
 import allure
 from allure_commons.types import Severity
-
 from utils.checking_methods import Checking
-
-
 import allure
 from allure_commons.types import Severity
 
 
+
+import allure
+
+from src.api.base_api import ApiClient
+from utils.enums import PetStatus
 
 def test_get_inventories_by_status(store_api):
     get_inventories=store_api.get_inventory()

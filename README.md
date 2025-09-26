@@ -28,38 +28,38 @@ This project **does not include**:
 
 ## Install and Run 
 **Local**
-git clone https://github.com/username/testProject2.git # Clone the repository
-cd testProject2
+`git clone https://github.com/username/testProject2.git `# Clone the repository
+**cd testProject2**
 
-**Create a virtual environment and install dependencies**
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
 
-**Run tests with Allure report generation**
-pytest --alluredir=allure_report
+Create a virtual environment and install dependencies
+``python3 -m venv .venv``
+``source .venv/bin/activate``
+``pip install -r requirements.txt``
+
+Run tests with Allure report generation
+``pytest --alluredir=allure_report``
 
 
 
 
 ## Docker
 
-**Build the image**
-docker build -t pytest_runner .
+Build the image
+``docker build -t pytest_runner .``
 
-**Run tests with result mapping**
-docker run --rm -v $(pwd)/test_result:/app/test_result pytest_runner
+Run tests with result mapping
+``docker run -v $(pwd)/output/test_result:/output/test_result pytest_runner``
 
 
 ## Reports
 
 The execution results are stored in the following directories:
 
-**allure_report**/ — when running locally
+``allure_report``/ — when running locally
 
-**test_result**/ — when running in Docker
+`test_result`/ — when running in Docker
 
-You can open the report with the command:
+`allure serve allure_report`/ — You can open the report with the command:
 
-**allure serve allure_report**
-
+`./output/scripts/run_tests.sh`/- run a script to generate allure report

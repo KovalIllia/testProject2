@@ -1,11 +1,11 @@
 import pytest
 
-from api.base_api import ApiClient
-from api.files_api import FilesApi
-from api.store_api import StoreApi
-from api.pet_api import PetApi
-from tests.factories.order_factory import OrderFactory
-from tests.factories.pet_factory import PetFactory
+from src.api.base_api import ApiClient
+from src.api.files_api import FilesApi
+from src.api.store_api import StoreApi
+from src.api.pet_api import PetApi
+from src.factories.order_factory import OrderFactory
+from src.factories.pet_factory import PetFactory
 from utils.logger import Logger
 
 
@@ -29,10 +29,10 @@ def place_order_for_a_pet(store_api):
     return response
 
 @pytest.fixture(scope="function")
-def create_pet(pet_api):
-    pet_body = PetFactory.default_pet(name="Rex", status="available")
-    response = pet_api.add_pet(pet_body)
-    return response
+def pet_payload(pet_api):
+    payload = PetFactory.default_pet(name="Rex", status="available")
+    print(f"Generated pet payload: {payload}")  # Логування для дебагу
+    return payload
 
 
 @pytest.fixture(scope="session")
