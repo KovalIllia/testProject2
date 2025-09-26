@@ -63,3 +63,7 @@ The execution results are stored in the following directories:
 `allure serve allure_report`/ — You can open the report with the command:
 
 `./output/scripts/run_tests.sh`/- run a script to generate allure report
+
+
+## GitHub Actions
+https://github.com/KovalIllia/testProject2/blob/master/.github/workflows/pytest.yml

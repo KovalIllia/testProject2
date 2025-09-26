@@ -51,10 +51,10 @@ jobs:
           pip install pytest allure-pytest pytest-html pytest-xdist
 
       # Running pytest with artifact generation
-      - name: Run pytest
-        run: |
-          mkdir -p output/test_result output/allure/allure-results output/reports
-          pytest -s --alluredir=output/allure/allure-results --junitxml=output/test_result/results.xml --html=output/reports/report.html tests/
+- name: Run pytest
+  run: |
+    mkdir -p output/test_result output/allure/allure-results output/reports
+    pytest -s --alluredir=output/allure/allure-results --junitxml=output/test_result/results.xml --html=output/reports/report.html --log-cli-level=DEBUG tests/
 
       # Preserving artifacts
       - name: Upload Allure results
