@@ -65,5 +65,26 @@ The execution results are stored in the following directories:
 `./output/scripts/run_tests.sh`/- run a script to generate allure report
 
 
-## GitHub Actions  
-https://github.com/KovalIllia/testProject2/blob/master/.github/workflows/pytest.yml
+## 🚀 CI/CD with GitHub Actions
+
+This repository has GitHub Actions configured to automatically run tests:
+
+- ✅ Run automatically on every `push` to `master`
+
+- ✅ Can be run manually via **Actions → Run workflow**
+- ✅ Test results are stored as artifacts:
+- JUnit XML (`results.xml`)
+- HTML report (`report.html`)
+- Allure results
+
+Workflow configuration file: 
+[.github/workflows/pytest.yml](.github/workflows/pytest.yml)
+
+
+### How to run tests manually
+
+1. Go to the **Actions** tab in the repository.
+2. Select `Pytest Workflow`.
+3. Click the **Run workflow** button.
+4. (Optional) enter the Python version (`3.9` or `3.10`).
+5. Wait for completion, the results are available in the **Artifacts** tab.
