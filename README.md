@@ -65,5 +65,5 @@ The execution results are stored in the following directories:
 `./output/scripts/run_tests.sh`/- run a script to generate allure report
 
 
-## GitHub Actions
+## GitHub Actions  
 https://github.com/KovalIllia/testProject2/blob/master/.github/workflows/pytest.yml
