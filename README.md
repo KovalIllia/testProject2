@@ -78,7 +78,7 @@ This repository has GitHub Actions configured to automatically run tests:
 - Allure results
 
 Workflow configuration file: 
-[.github/workflows/pytest.yml](.github/workflows/pytest.yml)
+[.github/workflows/pytest.yml](.github/workflows/pytest.yml) 
 
 
 ### How to run tests manually
