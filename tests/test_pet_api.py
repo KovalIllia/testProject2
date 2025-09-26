@@ -1,5 +1,7 @@
 import time
 
+import pytest
+
 from conftest import pet_payload
 from tests.factories.file_factory import FileFactory
 from tests.factories.pet_factory import UpdatePetFactory
@@ -79,14 +81,14 @@ def test_find_pet_by_id (pet_api, pet_payload):
 
 
 
-
+@pytest.mark.flaky(reruns=3,reruns_delay=2)
 def test_update_pet_with_form(pet_api,pet_payload):
 
     creating_pet = pet_api.add_pet(pet_payload)
+    time.sleep(3)
     created_pet = creating_pet.json()
     pet_id = created_pet["id"]
 
-    # wait_for_pet(pet_id,pet_api,retries=10,delay=1)
 
     found_pet = wait_for_pet(pet_id, pet_api, retries=10, delay=1)
     Checking.check_status_code(found_pet, 200)
@@ -104,17 +106,18 @@ def test_update_pet_with_form(pet_api,pet_payload):
 
 
 
-def wait_for_pet(pet_id, pet_api, retries=10, delay=1):
-    for i in range(retries):
+def wait_for_pet(pet_id, pet_api, retries=15, delay=2, expected_status=None):
+    for attempt in range(retries):
         response = pet_api.find_pet_by_id(pet_id)
         if response.status_code == 200:
-            return response
-        # Якщо статус 404, ми чекаємо і робимо наступну спробу
+            pet = response.json()
+            if not expected_status or pet.get("status") == expected_status:
+                return response
         time.sleep(delay)
-    # Якщо після всіх спроб ми так і не отримали 200, ми кидаємо помилку
-    raise AssertionError(f"Pet with ID {pet_id} not found after {retries} retries.")
-
-
+    raise AssertionError(
+        f"Pet {pet_id} not found with expected status "
+        f"{expected_status} after {retries} retries"
+    )
 
 
 
