@@ -6,6 +6,16 @@ on:
     branches:
       - main
   workflow_dispatch:  # Allows manual start
+  inputs:
+    python-version:
+      description: 'Python version'
+      required: true
+      default: '3.9'
+      type: choice
+      options:
+        - '3.9'
+        - '3.10'
+
 
 jobs:
   test:
@@ -20,7 +30,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'  # Version Python from my Dockerfile
+          python-version: ${{ github.event.inputs.python-version }}  # Version Python from my Dockerfile
 
       # Caching dependencies
       - name: Cache dependencies
@@ -43,8 +53,8 @@ jobs:
       # Running pytest with artifact generation
       - name: Run pytest
         run: |
-          mkdir -p output/test_result output/allure output/reports
-          pytest -s --alluredir=output/test_result --junitxml=output/test_result/results.xml --html=output/reports/report.html
+          mkdir -p output/test_result output/allure/allure-results output/reports
+          pytest -s --alluredir=output/allure/allure-results --junitxml=output/test_result/results.xml --html=output/reports/report.html tests/
 
       # Preserving artifacts
       - name: Upload Allure results
@@ -64,3 +74,9 @@ jobs:
         with:
           name: html-report
           path: output/reports/report.html
+
+      - name: Generate Allure report
+        if: always()
+        uses: simple-elf/allure-report-action@master
+        with:
+          allure_results: output/allure/allure-results
