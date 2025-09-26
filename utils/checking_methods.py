@@ -2,6 +2,8 @@
 import json
 import requests
 import pytest
+from typing import List, Tuple, Any
+
 
 class Checking():
 
@@ -42,7 +44,7 @@ class Checking():
 
 
     @staticmethod
-    def check_json_value(response: requests.Response, field_name, expected_value):
+    def check_json_value(response: requests.Response, field_name: str, expected_value: Any):
         check = response.json()
 
         if not check:
@@ -50,15 +52,15 @@ class Checking():
 
         if isinstance(check, list):
             """If it is a list, you need to check each element."""
-            for pet in check:
-                assert pet.get(field_name) == expected_value, \
-                    f"Value for field '{field_name}' in list mismatch. Expected: '{expected_value}', but got: '{pet.get(field_name)}'"
+            for item in check:
+                assert item.get(field_name) == expected_value, \
+                    f"Value for field '{field_name}' in list mismatch. Expected: '{expected_value}', but got: '{item.get(field_name)}'"
         elif isinstance(check, dict):
             """If it's a dictionary, you need to check it directly."""
             assert check.get(field_name) == expected_value, \
                 f"Value for field '{field_name}' in dict mismatch. Expected: '{expected_value}', but got: '{check.get(field_name)}'"
         else:
-            raise TypeError(f"Unsupported JSON type: {type(check)}")
+            raise TypeError(f"Unsupported JSON type: {type(check).__name__}")
 
 
 

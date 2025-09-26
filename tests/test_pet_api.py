@@ -1,5 +1,6 @@
 import time
 
+import allure
 import pytest
 
 from conftest import pet_payload
@@ -7,7 +8,7 @@ from tests.factories.file_factory import FileFactory
 from tests.factories.pet_factory import UpdatePetFactory
 from utils.checking_methods import Checking
 from utils.enums import PetStatus
-
+from waiters import PetWaiter
 
 
 def test_add_pet(pet_api, pet_payload):
@@ -70,17 +71,6 @@ def test_find_pet_by_id (pet_api, pet_payload):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 @pytest.mark.flaky(reruns=3,reruns_delay=2)
 def test_update_pet_with_form(pet_api,pet_payload):
 
@@ -90,70 +80,62 @@ def test_update_pet_with_form(pet_api,pet_payload):
     pet_id = created_pet["id"]
 
 
-    found_pet = wait_for_pet(pet_id, pet_api, retries=10, delay=1)
-    Checking.check_status_code(found_pet, 200)
-
+    PetWaiter.wait_for_pet(pet_api, pet_id,expected_status=200)
     response_with_update = pet_api.update_pet_with_form_data(
         pet_id,
         name="Lopik",
         status="sold"
     )
 
-    updated_pet = wait_for_pet(pet_id, pet_api, retries=10, delay=1)
     Checking.check_status_code(response=response_with_update, status_code=200)
     Checking.check_json_value(response=response_with_update, field_name="message", expected_value=str(pet_id))
 
 
 
 
-def wait_for_pet(pet_id, pet_api, retries=15, delay=2, expected_status=None):
-    for attempt in range(retries):
-        response = pet_api.find_pet_by_id(pet_id)
-        if response.status_code == 200:
-            pet = response.json()
-            if not expected_status or pet.get("status") == expected_status:
-                return response
-        time.sleep(delay)
-    raise AssertionError(
-        f"Pet {pet_id} not found with expected status "
-        f"{expected_status} after {retries} retries"
+
+
+@pytest.mark.flaky(reruns=3,reruns_delay=2)
+def test_delete_pet(pet_api,pet_payload):
+
+    creating_pet = pet_api.add_pet(pet_payload)
+    Checking.check_status_code(creating_pet, 200)
+
+    pet_id = creating_pet.json()["id"]
+    PetWaiter.wait_for_pet(pet_api,pet_id,expected_status=200)
+    delete_response=pet_api.delete_pet(pet_id)
+
+    Checking.check_status_code(response=delete_response, status_code=[200,204,404])
+
+    allure.attach(
+        f"Delete response: {delete_response.status_code} {delete_response.text}",
+        name="delete_pet_log",
+        attachment_type=allure.attachment_type.TEXT
+    )
+    PetWaiter.wait_for_pet(pet_api,pet_id, expected_status=404)
+
+
+
+
+
+
+@pytest.mark.flaky(reruns=3, reruns_delay=2)
+def test_upload_pet_image(pet_payload, files_client,pet_api):
+
+    creating_pet = pet_api.add_pet(pet_payload)
+    Checking.check_status_code(response=creating_pet, status_code=200)
+
+    created_pet = creating_pet.json()
+    pet_id = created_pet["id"]
+    PetWaiter.wait_for_pet(pet_api, pet_id, expected_status=200)
+
+    image_path = "test_dog.png"
+    file_path = FileFactory.pet_image(image_path)
+
+    response = files_client.upload_pet_image(
+        pet_id=pet_id,
+        file_path=file_path
     )
 
+    Checking.check_status_code(response, 200)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def test_delete_pet(pet_payload, pet_api):
-    created_pet=pet_payload.json()["id"]
-    delete_pet_by_id=pet_api.delete_pet(created_pet)
-    print(delete_pet_by_id.status_code,delete_pet_by_id.text)
-    if delete_pet_by_id.content:
-        print(delete_pet_by_id.json())
-    Checking.check_status_code(response=delete_pet_by_id, status_code=[200,204,404])
-
-def test_upload_pet_image(pet_payload, files_client):
-    created_pet=pet_payload.json()["id"]
-    files_path=FileFactory.pet_image("dog.png")
-
-    upload_result=files_client.upload_pet_image(created_pet,files_path,"smiled_dog")
-
-    print(upload_result.status_code,upload_result.json())
-    Checking.check_status_code(response=upload_result,status_code=200)
