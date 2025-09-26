@@ -1,21 +1,15 @@
 name: Pytest Workflow
 
-# Triggers: automatically when pushing/merging into main and manually via workflow_dispatch
 on:
   push:
     branches:
-      - master
-  workflow_dispatch:  # Allows manual start
-  inputs:
-    python-version:
-      description: 'Python version'
-      required: true
-      default: '3.9'
-      type: choice
-      options:
-        - '3.9'
-        - '3.10'
-
+      - master   # твоя головна гілка
+  workflow_dispatch:
+    inputs:
+      python-version:
+        description: 'Python version (наприклад: 3.9 або 3.10)'
+        required: true
+        default: '3.9'
 
 jobs:
   test:
@@ -30,14 +24,6 @@ jobs:
         with:
           python-version: ${{ github.event.inputs.python-version }}
 
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -47,28 +33,12 @@ jobs:
       - name: Run pytest
         run: |
           mkdir -p output/test_result output/allure/allure-results output/reports
-          pytest -s --alluredir=output/allure/allure-results --junitxml=output/test_result/results.xml --html=output/reports/report.html tests/
-
-      - name: Upload Allure results
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results
-          path: output/allure/allure-results/
-
-      - name: Upload JUnit results
-        uses: actions/upload-artifact@v4
-        with:
-          name: junit-results
-          path: output/test_result/results.xml
+          pytest -s --alluredir=output/allure/allure-results \
+                 --junitxml=output/test_result/results.xml \
+                 --html=output/reports/report.html tests/
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
           name: html-report
           path: output/reports/report.html
-
-      - name: Generate Allure report
-        if: always()
-        uses: simple-elf/allure-report-action@master
-        with:
-          allure_results: output/allure/allure-results
