@@ -3,12 +3,12 @@ import time
 import allure
 import pytest
 
-from conftest import pet_payload
+from tests.conftest import pet_payload
 from src.factories.file_factory import FileFactory
 from src.factories.pet_factory import UpdatePetFactory
 from utils.checking_methods import Checking
 from utils.enums import PetStatus
-from waiters import PetWaiter
+from utils.waiters import PetWaiter
 
 
 def test_add_pet(pet_api, pet_payload):

@@ -1,25 +1,28 @@
-import datetime
 import os
-import requests
+import datetime
 
-class Logger():
+class Logger:
 
-    if not os.path.exists('logs'):
-        os.makedirs('logs')
+    LOG_DIR = "./output/logs"
 
-    file_name=f"logs/log_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
+    if not os.path.exists(LOG_DIR):
+        os.makedirs(LOG_DIR)
 
+
+    file_name = f"{LOG_DIR}/log_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
 
     @classmethod
-    def write_log_to_file(cls,data:str):
-        with open(cls.file_name, 'a',encoding='utf-8') as logger_file:
+    def write_log_to_file(cls, data: str):
+        if "test_result" in cls.file_name:
+            raise ValueError("Logger is trying to write to test_result. Check configuration!")
+        with open(cls.file_name, 'a', encoding='utf-8') as logger_file:
             logger_file.write(data)
 
     @classmethod
     def add_request(cls,url:str, method: str,body:None,files_meta=None):
-        test_name=os.environ.get("PYTEST_CURRENT_TEST")#назва тесту який виконується
+        test_name=os.environ.get("PYTEST_CURRENT_TEST")
 
-        data_to_add = f"\n-----\n"#дані які додаються з переносами і пробілами
+        data_to_add = f"\n-----\n"
         data_to_add += f"Test:  {test_name}\n"
         data_to_add += f"Time:  {str(datetime.datetime.now())}\n"
         data_to_add += f"Request method:  {method}\n"
