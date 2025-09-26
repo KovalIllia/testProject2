@@ -4,7 +4,7 @@ name: Pytest Workflow
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:  # Allows manual start
   inputs:
     python-version:
@@ -22,46 +22,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checking out the code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Install Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ github.event.inputs.python-version }}  # Version Python from my Dockerfile
+          python-version: ${{ github.event.inputs.python-version }}
 
-      # Caching dependencies
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{
-            runner.os
-            }}-pip-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      # Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest allure-pytest pytest-html pytest-xdist
 
-      # Running pytest with artifact generation
       - name: Run pytest
         run: |
           mkdir -p output/test_result output/allure/allure-results output/reports
           pytest -s --alluredir=output/allure/allure-results --junitxml=output/test_result/results.xml --html=output/reports/report.html tests/
 
-      # Preserving artifacts
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: output/test_result/
+          path: output/allure/allure-results/
 
       - name: Upload JUnit results
         uses: actions/upload-artifact@v4
