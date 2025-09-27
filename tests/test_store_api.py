@@ -8,7 +8,7 @@ from src.api.files_api import FilesApi
 from src.api.store_api import StoreApi
 from src.factories.order_factory import OrderFactory
 from utils.logger import Logger
-from waiters import StoreWaiter
+from utils.waiters import StoreWaiter
 
 
 def test_create_first_order(store_api,store_payload):
