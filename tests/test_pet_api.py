@@ -63,7 +63,8 @@ def test_find_pet_by_id (pet_api, pet_payload):
 
     created_pet=creating_pet.json()
     pet_id=created_pet["id"]
-    looking_pet_by_id=pet_api.find_pet_by_id(pet_id)
+
+    looking_pet_by_id = PetWaiter.wait_for_pet(pet_api, pet_id, expected_status=200)
 
 
     Checking.check_status_code(response=looking_pet_by_id, status_code=200)
