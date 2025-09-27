@@ -88,6 +88,6 @@ Workflow configuration file:
 3. Click the **Run workflow** button.
 4. (Optional) enter the Python version (`3.9` or `3.10`).
 5. Wait for completion, the results are available in the **Artifacts** tab.
-6. 
+
 ## Test Reports
 - [Allure Report](https://kovalillia.github.io/testProject2/)
