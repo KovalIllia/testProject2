@@ -8,11 +8,14 @@ from typing import List, Tuple, Any
 class Checking():
 
     @staticmethod
-    def check_status_code(response: requests.Response, status_code):
-        """
-        Checks the response status code. Can handle a single integer or a list/tuple of integers.
-        """
-        if isinstance(status_code, (list, tuple)):
+    @staticmethod
+    def check_status_code(response, status_code):
+        if not isinstance(response, requests.Response):
+            raise TypeError(
+                f"check_status_code очікує requests.Response, але отримав {type(response).__name__}"
+            )
+
+        if isinstance(status_code, (list, tuple, dict)):
             assert response.status_code in status_code, \
                 f"Expected status codes: {status_code}, but got: {response.status_code}"
         else:
@@ -20,46 +23,61 @@ class Checking():
                 f"Expected status code: {status_code}, but got: {response.status_code}"
 
 
+
+
+
+
     @staticmethod
+    def check_json_answer(response, expected_value):
+        """
+        Перевірка, що JSON-відповідь містить потрібні ключі.
+        Працює як із requests.Response, так і з dict.
+        """
+        if isinstance(response, requests.Response):
+            check = response.json()
+        elif isinstance(response, dict):
+            check = response
+        else:
+            raise TypeError(
+                f"check_json_answer підтримує лише Response або dict, але отримав {type(response).__name__}"
+            )
+
+        if not check:
+            raise AssertionError("Response JSON is empty")
+
+        if isinstance(check, dict):
+            for field in expected_value:
+                assert field in check, \
+                    f"Field '{field}' is missing in response JSON"
+        elif isinstance(check, list):
+            for item in check:
+                for field in expected_value:
+                    assert field in item, \
+                        f"Field '{field}' is missing in response list item"
+        else:
+            raise TypeError(f"Unsupported JSON type: {type(check).__name__}")
+
     # def check_json_answer(response: requests.Response, expected_value):
     #     json_answer = response.json()
     #
     #     if not json_answer:
     #         raise AssertionError("Response JSON is empty.")
     #
-    #
     #     if isinstance(json_answer, list):
     #         data_to_check = json_answer[0]
     #     elif isinstance(json_answer, dict):
     #         data_to_check = json_answer
     #     else:
-    #         raise TypeError(f"unexpected response format from the server. Check the response format : {type(json_answer)}")
+    #         raise TypeError(
+    #             f"unexpected response format from the server. Check the response format : {type(json_answer)}")
     #
-    #     actual_keys = list(data_to_check.keys())
+    #     actual_keys = set(data_to_check.keys())
+    #     expected_keys = set(expected_value)
     #
-    #     for field in expected_value:
-    #         assert field in actual_keys, f"Ecspected response: '{field}', but actual result is different: '{actual_keys}'"
-    def check_json_answer(response: requests.Response, expected_value):
-        json_answer = response.json()
-
-        if not json_answer:
-            raise AssertionError("Response JSON is empty.")
-
-        if isinstance(json_answer, list):
-            data_to_check = json_answer[0]
-        elif isinstance(json_answer, dict):
-            data_to_check = json_answer
-        else:
-            raise TypeError(
-                f"unexpected response format from the server. Check the response format : {type(json_answer)}")
-
-        actual_keys = set(data_to_check.keys())
-        expected_keys = set(expected_value)
-
-        # Check if all expected keys are present in actual keys
-        missing_keys = expected_keys - actual_keys
-        if missing_keys:
-            raise AssertionError(f"Expected keys {missing_keys} are missing. Actual keys: {actual_keys}")
+    #     # Check if all expected keys are present in actual keys
+    #     missing_keys = expected_keys - actual_keys
+    #     if missing_keys:
+    #         raise AssertionError(f"Expected keys {missing_keys} are missing. Actual keys: {actual_keys}")
 
 
 
@@ -72,7 +90,16 @@ class Checking():
 
     @staticmethod
     def check_json_value(response: requests.Response, field_name: str, expected_value: Any):
-        check = response.json()
+        # check = response.json()
+
+        if isinstance(response, requests.Response):
+            check = response.json()
+        elif isinstance(response, dict):
+            check = response
+        else:
+            raise TypeError(
+                f"check_json_value підтримує лише Response або dict, але отримав {type(response).__name__}"
+            )
 
         if not check:
             raise AssertionError("Response JSON is empty")

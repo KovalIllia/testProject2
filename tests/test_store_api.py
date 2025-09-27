@@ -13,18 +13,35 @@ import allure
 from src.api.base_api import ApiClient
 from utils.enums import PetStatus
 
+def test_create_first_order(store_api,store_payload):
+    response=store_api.place_order(store_payload)
+    store_data=response.json()
+    Checking.check_status_code(response=response, status_code=200)
+    Checking.check_json_value(response= response, field_name="status", expected_value="placed")
+    # Checking.check_json_answer(response=response, expected_value=["id", "petId", "quantity", "shipDate", "status", "complete"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def test_get_inventories_by_status(store_api):
     get_inventories=store_api.get_inventory()
     print(get_inventories.status_code,get_inventories.json())
     Checking.check_status_code(response=get_inventories,status_code=200)
 
-
-def test_create_first_order(place_order_for_a_pet):
-    print("Created order:", place_order_for_a_pet.json())
-    print(place_order_for_a_pet.status_code,place_order_for_a_pet.json())
-    Checking.check_status_code(response=place_order_for_a_pet,status_code=200)
-    Checking.check_json_value(response= place_order_for_a_pet,field_name="status", expected_value="placed")
-    Checking.check_json_answer(response=place_order_for_a_pet,expected_value=["id", "petId", "quantity", "shipDate", "status", "complete"])
 
 
 def wait_for_order(order_id, store_api,retries=3, delay=1):
@@ -37,8 +54,8 @@ def wait_for_order(order_id, store_api,retries=3, delay=1):
     raise AssertionError(f"Order {order_id} not found after {retries} attemps")
 
 @pytest.mark.skip(reason="Swagger Petstore demo API does not persist orders")
-def test_find_purchase_order_by_id(place_order_for_a_pet,store_api):
-    order_id=place_order_for_a_pet.json()["id"]
+def test_find_purchase_order_by_id(store_payload, store_api):
+    order_id=store_payload.json()["id"]
     find_purchase_order_by_id=wait_for_order(order_id,store_api)
     print(find_purchase_order_by_id.status_code,find_purchase_order_by_id.json())
     Checking.check_status_code(response=find_purchase_order_by_id, status_code=[200,404])
@@ -47,8 +64,8 @@ def test_find_purchase_order_by_id(place_order_for_a_pet,store_api):
 
 
 @pytest.mark.skip(reason="Swagger Petstore demo API does not persist orders")
-def test_delete_purchase_order_by_id(place_order_for_a_pet,store_api):
-    order_id=place_order_for_a_pet.json()["id"]
+def test_delete_purchase_order_by_id(store_payload, store_api):
+    order_id=store_payload.json()["id"]
     delete_purchase_order_by_id=store_api.delete_placed_order(order_id)
     print(delete_purchase_order_by_id.status_code,delete_purchase_order_by_id.json())
     Checking.check_status_code(response=delete_purchase_order_by_id,status_code=200)
