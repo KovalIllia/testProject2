@@ -2,7 +2,7 @@ from datetime import time
 
 import pytest
 
-from checking_methods import Checking
+from utils.checking_methods import Checking
 from src.api.base_api import ApiClient
 from src.api.files_api import FilesApi
 from src.api.store_api import StoreApi
