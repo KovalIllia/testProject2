@@ -109,12 +109,6 @@ def test_delete_pet(pet_api,pet_payload):
     delete_response=pet_api.delete_pet(pet_id)
 
     Checking.check_status_code(response=delete_response, status_code=[200,204,404])
-
-    allure.attach(
-        f"Delete response: {delete_response.status_code} {delete_response.text}",
-        name="delete_pet_log",
-        attachment_type=allure.attachment_type.TEXT
-    )
     PetWaiter.wait_for_pet(pet_api,pet_id, expected_status=404)
 
 

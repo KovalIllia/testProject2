@@ -23,7 +23,7 @@ def pet_api(api_client):
     return PetApi(api_client)
 
 @pytest.fixture(scope="session")
-def place_order_for_a_pet(store_api):
+def store_payload(store_api):
     order_body = OrderFactory.default_order(quantity=3)
     response = store_api.place_order(order_body)
     return response

@@ -31,5 +31,12 @@ class PetApi:
 
     def delete_pet(self,pet_id:int):
         with allure.step("DELETE /pet/{petId}"):
-            return self.client.delete(f"/pet/{pet_id}")
+            response=self.client.delete(f"/pet/{pet_id}")
+            allure.attach(
+                f"Delete response: {response.status_code}\n{response.text}",
+                name=f"delete_pet_{pet_id}",
+                attachment_type=allure.attachment_type.TEXT
+            )
+            return  response
+
 
