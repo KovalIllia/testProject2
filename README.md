@@ -91,3 +91,22 @@ Workflow configuration file:
 
 ## Test Reports
 - [Allure Report](https://kovalillia.github.io/testProject2/)
+## 📊 Test Reports
+
+Current test results are available on GitHub Pages:
+
+- [Allure Report](https://kovalillia.github.io/testProject2/)
+- [Pytest HTML Report](https://kovalillia.github.io/testProject2/pytest-report.html)
+
+---
+
+### How to update the report:
+1. Run **Pytest Workflow** manually or do a `git push` to the `main` branch.
+2. Wait for CI to complete.
+3. Reports will be automatically generated and deployed to `gh-pages`.
+4. Open [Allure Report](https://kovalillia.github.io/testProject2/) or [Pytest Report](https://kovalillia.github.io/testProject2/pytest-report.html) to view the current results.
+
+---
+
+**Tip:**
+You can also download reports as artifacts directly from the **Actions → Run details** tab.
