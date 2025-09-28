@@ -62,13 +62,17 @@ jobs:
           name: allure-results
           path: output/allure/allure-results
 
-      # 7. Generate Allure Report
+         # 7. Creating Allure Report
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         with:
           allure_results: output/allure/allure-results
           allure_report: output/allure/allure-report
           allure_history: allure-history
+
+      # 7.1 Copy pytest HTML report into Allure folder
+      - name: Copy pytest-html into Allure report
+        run: cp output/reports/report.html output/allure/allure-report/pytest-report.html
 
       # 8. Copy pytest-html report into Allure folder (щоб обидва відображалися на Pages)
       - name: Copy pytest report
