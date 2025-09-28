@@ -37,7 +37,7 @@ jobs:
           pip install -r requirements.txt
           pip install pytest allure-pytest pytest-html pytest-xdist
 
-      # 5. run pytest with Allure
+      # 5. Run pytest with Allure + HTML
       - name: Run pytest
         run: |
           mkdir -p output/test_result output/allure/allure-results output/reports
@@ -47,7 +47,7 @@ jobs:
             --html=output/reports/report.html \
             tests/
 
-      # 6. Loading artifacts (handy for launch history)
+      # 6. Upload artifacts (history of launches)
       - name: Upload test reports
         uses: actions/upload-artifact@v4
         with:
@@ -62,7 +62,7 @@ jobs:
           name: allure-results
           path: output/allure/allure-results
 
-      # 7. Creating Allure Report
+      # 7. Generate Allure Report
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         with:
@@ -70,12 +70,15 @@ jobs:
           allure_report: output/allure/allure-report
           allure_history: allure-history
 
-      # 8. Deploy Allure report on GitHub Pages
-      - name: Deploy Allure report to GitHub Pages
+      # 8. Copy pytest-html report into Allure folder (щоб обидва відображалися на Pages)
+      - name: Copy pytest report
+        run: cp output/reports/report.html output/allure/allure-report/pytest-report.html
+
+      # 9. Deploy reports to GitHub Pages
+      - name: Deploy reports to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: output/allure/allure-report
-
