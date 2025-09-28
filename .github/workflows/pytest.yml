@@ -37,7 +37,7 @@ jobs:
           pip install -r requirements.txt
           pip install pytest allure-pytest pytest-html pytest-xdist
 
-      # 5. Run pytest with Allure + HTML
+        # 5. run pytest with Allure
       - name: Run pytest
         run: |
           mkdir -p output/test_result output/allure/allure-results output/reports
@@ -46,6 +46,11 @@ jobs:
             --junitxml=output/test_result/results.xml \
             --html=output/reports/report.html \
             tests/
+
+      # 5.1 Copy pytest report alongside allure-results
+      - name: Copy pytest-html for Allure
+        run: cp output/reports/report.html output/allure/allure-results/pytest-report.html
+
 
       # 6. Upload artifacts (history of launches)
       - name: Upload test reports
@@ -69,10 +74,6 @@ jobs:
           allure_results: output/allure/allure-results
           allure_report: output/allure/allure-report
           allure_history: allure-history
-
-      # 7.1 Copy pytest HTML report into Allure folder
-      - name: Copy pytest-html into Allure report
-        run: cp output/reports/report.html output/allure/allure-report/pytest-report.html
 
       # 8. Copy pytest-html report into Allure folder (щоб обидва відображалися на Pages)
       - name: Copy pytest report
